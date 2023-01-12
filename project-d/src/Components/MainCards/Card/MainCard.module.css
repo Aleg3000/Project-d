@@ -1,0 +1,46 @@
+.card {
+    display: flex;
+    align-items: center;
+    width: 15.5rem;
+    height: 45rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.card1 {
+    background-image: url(../../../assets/porsche.png);
+}
+
+.card2 {
+    background-image: url(../../../assets/union.png);
+}
+
+.card3 {
+    background-image: url(../../../assets/3d.png);
+}
+
+.card4 {
+    background-image: url(../../../assets/audi.png);
+}
+
+.card5 {
+    background-image: url(../../../assets/font.png);
+}
+
+.card > h2 {
+    width: 700px;
+    height: 48px;
+    text-align: center;
+    color: #fff;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+
+    opacity: 0;
+}
