@@ -32,15 +32,14 @@
 }
 
 .card > h2 {
-    width: 700px;
-    height: 48px;
+    width: 70rem;
+    height: 4.8rem;
     text-align: center;
     color: #fff;
-
+    font-family: 'Stolzl';
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
-    line-height: 48px;
-
+    font-size: 4rem;
+    line-height: 4.8rem;
     opacity: 0;
 }
