@@ -1,5 +1,6 @@
 import gsap from 'gsap'
-import { createRef } from 'react'
+import { createRef, useContext } from 'react'
+import { MyContext } from '../../App';
 import Card from './Card/MainCard';
 import cl from './MainCards.module.css'
 
@@ -7,7 +8,9 @@ const MainCards = () => {
 
     const container = createRef()
 
-    const colors = ['#CE5033', '#B15000', '#7FA7A8', '#C22E20', 'lime']
+    const [context, setContext] = useContext(MyContext);
+
+    const colors = ['#B15000', '#CE5033', '#7FA7A8', '#C22E20', 'lime']
 
     const cards = [
         'PORSCHE DAKAR, Testing',
@@ -17,21 +20,22 @@ const MainCards = () => {
         'OUCE TYPEFACE, Fonts',
     ]
 
-    function slideCard(mode, card, i) {
+    function slideCard(mode, card, i, e) {
         const title = card.firstChild
-        const translate = 27.25; /*  поправить расчеты */
+        const translate = 27.25; /* rem */
         
         if (mode === 'open') {
             gsap.to('main', {backgroundColor: colors[i], duration: 1})
             // to fix
             gsap.to(title, {opacity: 1, duration: 1, delay: 0.3 })
             gsap.to(card, {width: '70rem', opacity: 1, ease: "expo.out", duration: 1})
-            if (i === 2) return;
-            gsap.to(container.current, {
-                transform: `translateX(${i < 2 ? translate : - translate}rem)`,
-                ease: "expo.out",
-                duration: 1,
-            })
+            if (i !== 2) {
+                gsap.to(container.current, {
+                    transform: `translateX(${i < 2 ? translate : - translate}rem)`,
+                    ease: "expo.out",
+                    duration: 1,
+                })
+            }
         } else {
             gsap.to(card, {width: '15.5rem', opacity: 1, ease: "expo.out", duration: 1})
             gsap.to('main', {backgroundColor: '#0F1010', duration: 1})
@@ -48,7 +52,17 @@ const MainCards = () => {
             a.style.top = e.currentTarget.getBoundingClientRect().top + 'px'
             a.style.left = e.currentTarget.getBoundingClientRect().left + 'px'
             document.body.appendChild(a)
-            gsap.to(a, {width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0'})
+            const title = a.firstChild
+
+            gsap.to(title, { fontSize: '8rem', lineHeight: '8rem', opacity: 1 })
+            gsap.to(a, { width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',
+                onComplete: () => {
+                setContext({isProject: true})
+                document.body.style.overflow = 'auto'
+                setTimeout(() => a.remove(), 0);
+            }
+            })
+
     }
 
     

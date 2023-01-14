@@ -1,5 +1,6 @@
 .card {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 15.5rem;
     height: 45rem;
@@ -9,6 +10,7 @@
     background-size: cover;
     opacity: 1;
     cursor: pointer;
+    will-change: width, opacity, top, left, border-radius;
 }
 
 .card1 {
@@ -32,7 +34,7 @@
 }
 
 .card > h2 {
-    width: 70rem;
+    /* width: 70rem; */
     height: 4.8rem;
     text-align: center;
     color: #fff;

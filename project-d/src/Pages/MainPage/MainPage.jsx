@@ -1,5 +1,5 @@
 import cl from './MainPage.module.css'
-import MainCards from '../Components/MainCards/MainCards';
+import MainCards from '../../Components/MainCards/MainCards';
 
 
 const MainPage = () => {
@@ -17,7 +17,5 @@ const MainPage = () => {
 
 
 }
-
-
 
 export default MainPage
