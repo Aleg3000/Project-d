@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Project-d/static/css/main.866c7c7a.css",
+    "main.js": "/Project-d/static/js/main.76ddff3a.js",
+    "static/js/787.21048d91.chunk.js": "/Project-d/static/js/787.21048d91.chunk.js",
+    "static/media/5.png": "/Project-d/static/media/5.1d421ea98540fa775d41.png",
+    "static/media/3.png": "/Project-d/static/media/3.7d40ac5f066894943fe0.png",
+    "static/media/2.png": "/Project-d/static/media/2.7c855369f12072373455.png",
+    "static/media/1.png": "/Project-d/static/media/1.ff095a1805c67052d661.png",
+    "static/media/4.png": "/Project-d/static/media/4.889b16d569ef68f0069e.png",
+    "static/media/porsche.png": "/Project-d/static/media/porsche.f76532af97ae71cc248c.png",
+    "static/media/audi.png": "/Project-d/static/media/audi.298312bbb0078247ba3e.png",
+    "static/media/font.png": "/Project-d/static/media/font.e08f29a3449d6f05795b.png",
+    "static/media/3d.png": "/Project-d/static/media/3d.73157d3c018659cd588e.png",
+    "static/media/applegaramondcyr_regular.ttf": "/Project-d/static/media/applegaramondcyr_regular.4bed0f57759f2b00ad36.ttf",
+    "static/media/union.png": "/Project-d/static/media/union.1640fc0eac5ae9ac05e0.png",
+    "static/media/stolzl_regular.otf": "/Project-d/static/media/stolzl_regular.9603d48be34f3721c9c6.otf",
+    "index.html": "/Project-d/index.html",
+    "main.866c7c7a.css.map": "/Project-d/static/css/main.866c7c7a.css.map",
+    "main.76ddff3a.js.map": "/Project-d/static/js/main.76ddff3a.js.map",
+    "787.21048d91.chunk.js.map": "/Project-d/static/js/787.21048d91.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.866c7c7a.css",
+    "static/js/main.76ddff3a.js"
+  ]
+}
