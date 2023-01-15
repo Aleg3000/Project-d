@@ -1,0 +1,41 @@
+.aboutContainer {
+    position: absolute;
+    bottom: -22.5rem;
+    left: 50vw;
+    transform: translate(-50%, 50%);
+    display: none;
+    gap: 20px;
+    height: 45rem;
+    /* width: 100vw; */
+    width: 85.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #0F1010;
+}
+
+.aboutCard {
+    width: 15.5rem;
+    height: 45rem;
+    background-color: #D9D9D9;
+    border-radius: 1rem;
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.aboutCard.active {
+    width: 70rem;
+}
+
+.aboutCard > div {
+    width: 14.5rem;
+    height: 3.6rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    margin: 2.5rem 4.8rem;
+}
