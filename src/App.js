@@ -2,14 +2,18 @@ import MainPage from './Pages/MainPage/MainPage';
 import { createContext } from 'react';
 import { useState } from 'react';
 import ProjectPage from './Pages/ProjectPage/ProjectPage';
+import HookahPage from './Pages/HookahPage/HookahPage';
 
 export const MyContext = createContext(null);
 
-const defaultV =  { position: {
-  top: 0,
-  left: 0,
-},
-isProject: false 
+const defaultV =  { 
+  currentPage: 'main',
+  isProject: false 
+}
+
+const pages = {
+  test: <ProjectPage />,
+  hookah: <HookahPage />,
 }
 
 function App() {
@@ -21,12 +25,10 @@ function App() {
     <div className="App">
       {context.isProject 
       ?
-      <ProjectPage />
+      pages[context.currentPage]
       :
       <MainPage />
     }
-      {/* <MainPage />
-      {context.isProject && <ProjectPage></ProjectPage>} */}
     </div>  
   </MyContext.Provider>
     

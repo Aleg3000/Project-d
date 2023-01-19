@@ -18,7 +18,7 @@
 }
 
 .card2 {
-    background-image: url(../../../assets/union.png);
+    background-image: url(../../../assets/union.jpg);
 }
 
 .card3 {
@@ -44,4 +44,11 @@
     font-size: 4rem;
     line-height: 4.8rem;
     opacity: 0;
+}
+
+.card > h2 > span {
+    font-family: 'Apple Garamond CYR';
+    text-transform: capitalize;
+    font-size: 1.12em;
+    line-height: 1;
 }

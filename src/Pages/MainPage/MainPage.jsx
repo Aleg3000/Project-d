@@ -1,9 +1,8 @@
 import cl from './MainPage.module.css'
 import MainCards from '../../Components/MainCards/MainCards';
 import gsap from 'gsap';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import About from '../../Components/About/About';
-
 
 const MainPage = () => {
     const aboutContainer = useRef();

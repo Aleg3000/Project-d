@@ -1,0 +1,90 @@
+.content {
+    /* overflow: visible; */
+    overflow-x: hidden;
+    width: 100vw;
+    /* set a height because the contents are position: absolute, thus natively there's no height */
+    height: calc(100vw + 390rem + 800px + 900px);
+    background-color: #0F1010;
+    position: relative;
+}
+
+.projectImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: #fff; */
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    cursor: pointer;
+    background-image: url(../../assets/union.jpg);
+}
+
+.projectImg > h2 {
+    /* width: 70rem; */
+    height: 4.8rem;
+    text-align: center;
+    color: #fff;
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8rem;
+    line-height: 8rem;
+    /* opacity: 0; */
+}
+
+.unionFirstBg {
+    position: absolute;
+    top: calc(100vh + 23rem);
+    left: 3.6rem;
+    width: 95.5rem;
+    height: 88rem;
+    background-image: url(../../assets/union-hookah/bg.png);
+    background-size: cover;
+}
+
+.unionFirstFont {
+    position: absolute;
+    top: calc(100vh + 23rem);
+    left: 3.6rem;
+    width: 95.5rem;
+    height: 88rem;
+    background-image: url(../../assets/union-hookah/logo.png);
+    background-size: cover;
+}
+
+.unionFirstTopFont {
+    z-index: 5;
+    position: absolute;
+    top: calc(100vh + 23rem);
+    left: 3.6rem;
+    width: 95.5rem;
+    height: 88rem;
+    background-image: url(../../assets/union-hookah/logo2.png);
+    background-size: cover;
+}
+
+.leftDudka {
+    position: absolute;
+    top: calc(100vh + 23rem + 800px);
+    left: 3.6rem;
+    width: 95.5rem;
+    height: 112.7rem;
+    background-image: url(../../assets/union-hookah/truba_L.png);
+    background-size: cover;
+}
+
+.rightDudka {
+    position: absolute;
+    top: calc(100vh + 23rem + 800px);
+    left: 3.6rem;
+    width: 95.5rem;
+    height: 112.7rem;
+    background-image: url(../../assets/union-hookah/truba_R.png);
+    background-size: cover;
+}

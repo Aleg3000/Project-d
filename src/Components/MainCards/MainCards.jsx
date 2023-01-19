@@ -20,6 +20,8 @@ const MainCards = () => {
         'OUCE TYPEFACE, Fonts',
     ]
 
+    const dataSet = ['test', 'hookah', 'test', 'test', 'test']
+
     function slideCard(mode, card, i, e) {
         const title = card.firstChild
         const translate = 27.25; /* rem */
@@ -53,11 +55,13 @@ const MainCards = () => {
             a.style.left = e.currentTarget.getBoundingClientRect().left + 'px'
             document.body.appendChild(a)
             const title = a.firstChild
+            const { dataset: { page } } = e.currentTarget
+            console.log(page)
 
             gsap.to(title, { fontSize: '8rem', lineHeight: '8rem', opacity: 1 })
             gsap.to(a, { width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',
                 onComplete: () => {
-                setContext({isProject: true})
+                setContext({isProject: true, currentPage: page})
                 document.body.style.overflow = 'auto'
                 setTimeout(() => a.remove(), 0);
             }
@@ -70,6 +74,7 @@ const MainCards = () => {
     return (
         <div className={cl.mainContainer} ref={container}>
             {cards.map((card, i) => <Card 
+                                        dataSet={dataSet[i]}
                                         open={openCard}
                                         slide={slideCard} 
                                         title={card} 
