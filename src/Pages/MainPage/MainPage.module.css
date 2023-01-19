@@ -18,20 +18,3 @@
     color: #FFFFFF;
 }
 
-.aboutBtn {
-    position: absolute;
-    width: 7.2rem;
-    height: 3rem;
-
-    left: calc(50vw - 3.6rem);
-    bottom: 5rem;
-
-    font-family: 'Stolzl';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 3rem;
-
-    color: #979797;
-    cursor: pointer;
-}

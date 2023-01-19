@@ -60,6 +60,7 @@ const MainCards = () => {
 
             gsap.to(title, { fontSize: '8rem', lineHeight: '8rem', opacity: 1 })
             gsap.to(a, { width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',
+                // duration: 2,
                 onComplete: () => {
                 setContext({isProject: true, currentPage: page})
                 document.body.style.overflow = 'auto'
