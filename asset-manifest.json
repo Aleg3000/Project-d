@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Project-d/static/css/main.98d8e3e1.css",
-    "main.js": "/Project-d/static/js/main.431b72cc.js",
+    "main.css": "/Project-d/static/css/main.dd7490fd.css",
+    "main.js": "/Project-d/static/js/main.6606d9fc.js",
     "static/js/787.21048d91.chunk.js": "/Project-d/static/js/787.21048d91.chunk.js",
     "static/media/bg.png": "/Project-d/static/media/bg.c904d02a200837db0dca.png",
     "static/media/5.png": "/Project-d/static/media/5.1d421ea98540fa775d41.png",
@@ -12,6 +12,7 @@
     "static/media/truba_L.png": "/Project-d/static/media/truba_L.7f5cd4c2a8398b796c8c.png",
     "static/media/porsche.png": "/Project-d/static/media/porsche.f76532af97ae71cc248c.png",
     "static/media/audi.png": "/Project-d/static/media/audi.298312bbb0078247ba3e.png",
+    "static/media/porsche-mobile.png": "/Project-d/static/media/porsche-mobile.8755bca967058abd4f0c.png",
     "static/media/union.jpg": "/Project-d/static/media/union.fca4b2eae2defa4c4086.jpg",
     "static/media/font.png": "/Project-d/static/media/font.e08f29a3449d6f05795b.png",
     "static/media/3d.png": "/Project-d/static/media/3d.73157d3c018659cd588e.png",
@@ -21,12 +22,12 @@
     "static/media/logo2.png": "/Project-d/static/media/logo2.80535586607d5cf47d1b.png",
     "static/media/logo.png": "/Project-d/static/media/logo.e89a5473bd3ae8f582bd.png",
     "index.html": "/Project-d/index.html",
-    "main.98d8e3e1.css.map": "/Project-d/static/css/main.98d8e3e1.css.map",
-    "main.431b72cc.js.map": "/Project-d/static/js/main.431b72cc.js.map",
+    "main.dd7490fd.css.map": "/Project-d/static/css/main.dd7490fd.css.map",
+    "main.6606d9fc.js.map": "/Project-d/static/js/main.6606d9fc.js.map",
     "787.21048d91.chunk.js.map": "/Project-d/static/js/787.21048d91.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.98d8e3e1.css",
-    "static/js/main.431b72cc.js"
+    "static/css/main.dd7490fd.css",
+    "static/js/main.6606d9fc.js"
   ]
 }
