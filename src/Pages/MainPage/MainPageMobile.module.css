@@ -1,0 +1,81 @@
+.main {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0F1010;
+}
+
+/* чет сделать с тем что на яфоне не убирается снизу строка */
+
+/* // сделать на гридах, add minmax */
+
+.title {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    height: 20vh; */
+    /* width: 100vw; */
+    text-align: center;
+    line-height: 20vh;
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.aboutBtn {
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20vh;
+    width: 100vw; */
+    text-align: center;
+    line-height: 20vh;
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    color: #979797;
+}
+
+.cardVisibleContainer {
+    /* position: absolute;
+    top: 20vh; */
+    overflow: hidden;
+}
+
+.cardContainer {
+    height: 100%;
+    width: 500vw;
+    /* transform: translateX(calc(-100vw + 45px)); */
+    display: flex;
+    padding: 0 30px;
+    gap: 15px;
+}
+
+.card {
+    /* margin: 0 1.5rem; */
+    display: inline-block;
+    height: 100%;
+    width: calc(100vw - 60px);
+    border-radius: 10px;
+    background-image: url(../../assets/porsche-mobile.png);
+    background-size: cover;
+    background-position: center;
+    /* object-fit: cover; */
+}
+
+.card:nth-child(2) {
+    background-image: url(../../assets/union.jpg);
+}
+.card:nth-child(3) {
+    background-image: url(../../assets/3d.png);
+}
+.card:nth-child(4) {
+    background-image: url(../../assets/audi.png);
+}
+.card:nth-child(5) {
+    background-image: url(../../assets/font.png);
+}

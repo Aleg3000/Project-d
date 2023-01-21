@@ -56,6 +56,7 @@ const MainCards = () => {
             document.body.appendChild(a)
             const title = a.firstChild
             const { dataset: { page } } = e.currentTarget
+            
             console.log(page)
 
             gsap.to(title, { fontSize: '8rem', lineHeight: '8rem', opacity: 1 })
