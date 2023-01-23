@@ -12,7 +12,7 @@ const About = () => {
         if (isOpen) {
             gsap.to(aboutContainer.current, {
                 bottom: '-45rem',
-                duration: 1,
+                duration: 0.6,
                 overwrite: true,
                 onComplete: () => aboutContainer.current.style.display = 'none'
             })

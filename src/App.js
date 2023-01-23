@@ -5,6 +5,9 @@ import ProjectPage from './Pages/ProjectPage/ProjectPage';
 import HookahPage from './Pages/HookahPage/HookahPage';
 import { useMatchMedia } from './hooks/use-match-media';
 import MainPageMobile from './Pages/MainPage/MainPageMobile';
+import AudiPage from './Pages/AudiPage/AudiPage';
+import ThreeDPage from './Pages/ThreeD/ThreeDPage';
+import FontPage from './Pages/FontPage/FontPage';
 
 export const MyContext = createContext(null);
 
@@ -16,6 +19,9 @@ const defaultV =  {
 const pages = {
   test: <ProjectPage />,
   hookah: <HookahPage />,
+  audi: <AudiPage />,
+  threeD: <ThreeDPage />,
+  font: <FontPage />,
 }
 
 function App() {

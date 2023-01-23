@@ -20,7 +20,7 @@ const MainCards = () => {
         'OUCE TYPEFACE, Fonts',
     ]
 
-    const dataSet = ['test', 'hookah', 'test', 'test', 'test']
+    const dataSet = ['test', 'hookah', 'threeD', 'audi', 'font']
 
     function slideCard(mode, card, i, e) {
         const title = card.firstChild
@@ -56,7 +56,7 @@ const MainCards = () => {
             document.body.appendChild(a)
             const title = a.firstChild
             const { dataset: { page } } = e.currentTarget
-            
+
             console.log(page)
 
             gsap.to(title, { fontSize: '8rem', lineHeight: '8rem', opacity: 1 })
