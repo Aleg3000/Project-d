@@ -88,3 +88,33 @@
     background-image: url(../../assets/union-hookah/truba_R.png);
     background-size: cover;
 }
+
+.logoU {
+    width: 95rem;
+    height: 36rem;
+    position: absolute;
+    top: calc(100vh + 23rem + 800px + 112.7rem + 32rem);
+    left: 27.8rem;
+    background-image: url(../../assets/union-hookah/logo-animation/logoU.png);
+    background-size: cover;
+}
+
+.logoNion {
+    width: 95rem;
+    height: 36rem;
+    position: absolute;
+    top: calc(100vh + 23rem + 800px + 112.7rem + 32rem);
+    left: 27.8rem;
+    background-image: url(../../assets/union-hookah/logo-animation/logoNion.png);
+    background-size: cover;
+}
+
+.logoHookah {
+    width: 95rem;
+    height: 36rem;
+    position: absolute;
+    top: calc(100vh + 23rem + 800px + 112.7rem + 32rem);
+    left: 27.8rem;
+    background-image: url(../../assets/union-hookah/logo-animation/logoHookah.png);
+    background-size: cover;
+}

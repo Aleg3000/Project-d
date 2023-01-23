@@ -59,7 +59,45 @@ const HookahPage = () => {
                 }
             })
 
-        }, firstBg, firstFont)
+            gsap.from(logoU.current, {
+                x: '37rem',
+                duration: 0.6,
+                // repeat: -1,
+                // repeatDelay: 3,
+                scrollTrigger: {
+                    trigger: logoU.current,
+                    start: '25% center',
+                    markers: true,
+                    toggleActions: 'play reset play reset'
+                }
+            })
+            gsap.from(logoNion.current, {
+                x: '100vw',
+                duration: 0.7,
+                // ease: "back.out(1.2)",
+                // repeat: -1,
+                // repeatDelay: 3,
+                scrollTrigger: {
+                    trigger: logoU.current,
+                    start: '25% center',
+                    toggleActions: 'play reset play reset'
+                }
+            })
+            gsap.from(logoHookah.current, {
+                x: '100vw',
+                delay: 1,
+                duration: 0.7,
+                ease: "back.out(1.7)",
+                // repeat: -1,
+                // repeatDelay: 3,
+                scrollTrigger: {
+                    trigger: logoU.current,
+                    start: '25% center',
+                    toggleActions: 'play reset play reset'
+                }
+            })
+
+        }, firstBg, firstFont, logoU, logoNion, logoHookah)
         
 
 
@@ -82,16 +120,25 @@ const HookahPage = () => {
     }
     ,[])
 
+    const logoU = createRef()
+    const logoNion = createRef()
+    const logoHookah = createRef()
+
     return (
         <div className={cl.content}>
                     <div className={cl.projectImg}>
                         <h2>UNION HOOKAH, Packing</h2>
                     </div>
+
                     <div ref={firstBg} className={cl.unionFirstBg}></div>
                     <div ref={firstFont} className={cl.unionFirstFont}></div>
                     <div ref={overflowFont} className={cl.unionFirstTopFont}></div>
                     <div ref={leftDudka} className={cl.leftDudka}></div>
                     <div ref={rightDudka} className={cl.rightDudka}></div>
+
+                    <div ref={logoU} className={cl.logoU}></div>
+                    <div ref={logoNion} className={cl.logoNion}></div>
+                    <div ref={logoHookah} className={cl.logoHookah}></div>
             </div>
     )
 }
