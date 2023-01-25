@@ -95,7 +95,9 @@
     height: 36rem;
     position: absolute;
     top: calc(100vh + 23rem + 800px + 112.7rem + 32rem);
-    left: 27.8rem;
+    /* left: 27.8rem; */
+    left: 50vw;
+    transform: translateX(-50%);
     background-image: url(../../assets/union-hookah/logo-animation/logoU.png);
     background-size: cover;
 }
@@ -105,7 +107,9 @@
     height: 36rem;
     position: absolute;
     top: calc(100vh + 23rem + 800px + 112.7rem + 32rem);
-    left: 27.8rem;
+    /* left: 27.8rem; */
+    left: 50vw;
+    transform: translateX(-50%);
     background-image: url(../../assets/union-hookah/logo-animation/logoNion.png);
     background-size: cover;
 }
@@ -115,7 +119,9 @@
     height: 36rem;
     position: absolute;
     top: calc(100vh + 23rem + 800px + 112.7rem + 32rem);
-    left: 27.8rem;
+    /* left: 27.8rem; */
+    left: 50vw;
+    transform: translateX(-50%);
     background-image: url(../../assets/union-hookah/logo-animation/logoHookah.png);
     background-size: cover;
 }
@@ -219,8 +225,8 @@
 }
 
 .logo {
-    width: 80%;
-    height: 6%;
+    width: 51rem;
+    height: 3.7rem;
     mask-image: url(../../assets/union-hookah/site-animation/logo.svg);
     -webkit-mask-image: url(../../assets/union-hookah/site-animation/logo.svg);
     mask-position: center;

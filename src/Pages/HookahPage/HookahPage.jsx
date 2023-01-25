@@ -88,7 +88,7 @@ const HookahPage = () => {
             })
 
             gsap.from(logoU.current, {
-                x: '37rem',
+                x: '40rem',
                 duration: 0.6,
                 // repeat: -1,
                 // repeatDelay: 3,

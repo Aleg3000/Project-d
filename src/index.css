@@ -12,6 +12,18 @@
   }
 }
 
+@media(min-width: 1440px) {
+  html {
+    font-size: calc(100vw / 1640 * 10);
+  }
+}
+
+@media(min-width: 1640px) {
+  html {
+    font-size: calc(100vw / 2060 * 10);
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
