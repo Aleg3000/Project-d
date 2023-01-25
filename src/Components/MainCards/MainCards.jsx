@@ -1,5 +1,6 @@
 import gsap from 'gsap'
 import { createRef, useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { MyContext } from '../../App';
 import Card from './Card/MainCard';
 import cl from './MainCards.module.css'
@@ -7,6 +8,8 @@ import cl from './MainCards.module.css'
 const MainCards = () => {
 
     const container = createRef()
+
+    const navigate = useNavigate()
 
     const [context, setContext] = useContext(MyContext);
 
@@ -63,7 +66,10 @@ const MainCards = () => {
             gsap.to(a, { width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',
                 // duration: 2,
                 onComplete: () => {
-                setContext({isProject: true, currentPage: page})
+                // setContext({isProject: true, currentPage: page})
+
+                navigate(page)
+                
                 document.body.style.overflow = 'auto'
                 setTimeout(() => a.remove(), 0);
             }

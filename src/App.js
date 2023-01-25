@@ -8,6 +8,7 @@ import MainPageMobile from './Pages/MainPage/MainPageMobile';
 import AudiPage from './Pages/AudiPage/AudiPage';
 import ThreeDPage from './Pages/ThreeD/ThreeDPage';
 import FontPage from './Pages/FontPage/FontPage';
+import { Routes, Route } from 'react-router-dom';
 
 export const MyContext = createContext(null);
 
@@ -32,8 +33,7 @@ function App() {
   
   return (
   <MyContext.Provider value={[context, setContext]}>
-    <div className="App">
-      {context.isProject 
+      {/* {context.isProject 
       ?
       pages[context.currentPage]
       :
@@ -42,8 +42,15 @@ function App() {
       <MainPageMobile />
       :
       <MainPage />
-    }
-    </div>  
+    } */}
+    <Routes>
+          <Route index element={isMobile ? <MainPageMobile /> : <MainPage />} />
+          <Route path='hookah' element={<HookahPage />} />
+          <Route path='audi' element={<AudiPage />} />
+          <Route path='threeD' element={<ThreeDPage />} />
+          <Route path='font' element={<FontPage />} />
+          <Route path='test' element={<ProjectPage />} />
+    </Routes>
   </MyContext.Provider>
     
   );
