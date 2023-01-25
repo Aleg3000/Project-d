@@ -2,15 +2,43 @@ import cl from './HookahPage.module.css'
 import { useEffect, createRef } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/src/ScrollTrigger'
+import { useLayoutEffect } from 'react'
+import { createGlobalStyle } from 'styled-components'
 
 
 const HookahPage = () => {
+
+    // useLayoutEffect(() => {
+    //     const GlobalStyles = createGlobalStyle`
+    //         html {
+    //             --color-text: black;
+    //             --color-background: white;
+    //             --color-primary: rebeccapurple;
+    //         }
+    //         `;
+    // })
 
     const firstBg = createRef();
     const firstFont = createRef();
     const leftDudka = createRef();
     const rightDudka = createRef();
     const overflowFont = createRef();
+
+    const logoU = createRef()
+    const logoNion = createRef()
+    const logoHookah = createRef()
+
+    const bags = createRef()
+    const topMotionText = createRef()
+    const centerMotionText = createRef()
+
+    const blackSquareContainer = createRef()
+    const blackSquare = createRef()
+    const sitePage = createRef()
+
+    const whiteSquareContainer = createRef()
+    const whiteSquare = createRef()
+    const mockUpContainer = createRef()
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -97,7 +125,111 @@ const HookahPage = () => {
                 }
             })
 
-        }, firstBg, firstFont, logoU, logoNion, logoHookah)
+
+
+            gsap.from(topMotionText.current, {
+                x: '-100%',
+                duration: 1.7,
+                ease: "elastic.out(2, 0.2)",
+                scrollTrigger: {
+                    trigger: topMotionText.current,
+                    start: '25% center',
+                    toggleActions: 'play reverse play reverse',
+                    markers: true
+                }
+            })
+
+            gsap.from(centerMotionText.current, {
+                x: '100%',
+                duration: 1.7,
+                ease: "elastic.out(2, 0.2)",
+                scrollTrigger: {
+                    trigger: topMotionText.current,
+                    start: '25% center',
+                    toggleActions: 'play reverse play reverse',
+                }
+            })
+
+            
+            gsap.to(blackSquareContainer.current, {
+                scrollTrigger: {
+                    trigger: blackSquareContainer.current,
+                    start: 'center center',
+                    // toggleActions: 'play reverse play reverse',
+                    // scrub: 1,
+                    end: "+=1000",
+                    pin: true,
+                    markers: true
+                }
+            })
+
+            gsap.to(blackSquare.current, {
+                height: '100vh',
+                width: '100vw',
+                scrollTrigger: {
+                    trigger: blackSquareContainer.current,
+                    start: 'center center',
+                    // toggleActions: 'play reverse play reverse',
+                    scrub: 1,
+                    end: "+=400",
+                },
+            })
+
+            gsap.to(sitePage.current, {
+                scrollTrigger: {
+                    trigger: blackSquareContainer.current,
+                    start: 'center center',
+                    // toggleActions: 'play reverse play reverse',
+                    scrub: 1,
+                    end: "+=800",
+                },
+                keyframes: {
+                    "0%":   { top: '50vh', left: '50vw', width: 0, height: 0},
+                    "50%":  { top: '50vh', left: '50vw', width: 0, height: 0},
+                    "100%": { top: 0, left: 0, width: '100vw', height: '100vh'},
+                   },
+            })
+
+            gsap.to(whiteSquareContainer.current, {
+                scrollTrigger: {
+                    trigger: whiteSquareContainer.current,
+                    start: 'center center',
+                    // toggleActions: 'play reverse play reverse',
+                    // scrub: 1,
+                    end: "+=1000",
+                    pin: true,
+                    markers: true
+                }
+            })
+
+            gsap.to(whiteSquare.current, {
+                height: '100vh',
+                width: '100vw',
+                scrollTrigger: {
+                    trigger: whiteSquareContainer.current,
+                    start: 'center center',
+                    // toggleActions: 'play reverse play reverse',
+                    scrub: 1,
+                    end: "+=400",
+                },
+            })
+
+            gsap.to(mockUpContainer.current, {
+                scrollTrigger: {
+                    trigger: whiteSquareContainer.current,
+                    start: 'center center',
+                    // toggleActions: 'play reverse play reverse',
+                    scrub: 1,
+                    end: "+=800",
+                },
+                keyframes: {
+                    "0%":   { top: '50vh', left: '50vw', width: 0, height: 0},
+                    "50%":  { top: '50vh', left: '50vw', width: 0, height: 0},
+                    "100%": { top: 0, left: 0, width: '100vw', height: '100vh'},
+                   },
+            })
+
+        }, firstBg, firstFont, logoU, logoNion, logoHookah, topMotionText, centerMotionText)
         
 
 
@@ -118,11 +250,9 @@ const HookahPage = () => {
 
         return () => {ctx.revert()} /* clean up */
     }
-    ,[])
+    ,[firstBg, firstFont, overflowFont, logoU, logoNion, logoHookah, topMotionText, centerMotionText, blackSquareContainer, blackSquare, sitePage, whiteSquareContainer, whiteSquare, mockUpContainer])
 
-    const logoU = createRef()
-    const logoNion = createRef()
-    const logoHookah = createRef()
+
 
     return (
         <div className={cl.content}>
@@ -139,6 +269,28 @@ const HookahPage = () => {
                     <div ref={logoU} className={cl.logoU}></div>
                     <div ref={logoNion} className={cl.logoNion}></div>
                     <div ref={logoHookah} className={cl.logoHookah}></div>
+
+                    <div ref={bags} className={cl.bags}></div>
+                    <div ref={topMotionText} className={cl.topMotionText}></div>
+                    <div ref={centerMotionText} className={cl.centerMotionText}></div>
+
+
+                    <div ref={blackSquareContainer} className={cl.blackSquareContainer}>
+                        <div ref={blackSquare} className={cl.blackSquare}>
+                            <div style={{backgroundColor: '#fff'}} className={cl.logo}></div>
+                        </div>
+                        <div ref={sitePage} className={cl.sitePage}></div>
+                    </div>
+
+                    <div ref={whiteSquareContainer} className={cl.whiteSquareContainer}>
+                        <div ref={whiteSquare} className={cl.whiteSquare}>
+                            <div style={{backgroundColor: '#000'}} className={cl.logo}></div>
+                        </div>
+                        <div ref={mockUpContainer} className={cl.mockUpContainer}>
+                            <div className={cl.mockUpBook}></div>
+                        </div>
+                    </div>
+                    
             </div>
     )
 }
