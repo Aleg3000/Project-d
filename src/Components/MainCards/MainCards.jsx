@@ -17,10 +17,10 @@ const MainCards = () => {
 
     const cards = [
         'PORSCHE DAKAR, Testing',
-        'UNION HOOKAH, Packing',
+        'UNION HOOKAH, Branding',
         '3D LETTERING, Lettering',
-        'AUDI QUATTRO DAYS, Branding',
-        'OUCE TYPEFACE, Fonts',
+        'AUDI QUATTRO DAYS, Key visual',
+        'OUCE, Type',
     ]
 
     const dataSet = ['test', 'hookah', 'threeD', 'audi', 'font']
@@ -69,7 +69,7 @@ const MainCards = () => {
                 // setContext({isProject: true, currentPage: page})
 
                 navigate(page)
-                
+
                 document.body.style.overflow = 'auto'
                 setTimeout(() => a.remove(), 0);
             }

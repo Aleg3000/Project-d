@@ -1,9 +1,12 @@
 import { createRef, useState, useLayoutEffect, useEffect } from 'react';
 import gsap from 'gsap'
+import { useNavigate } from 'react-router-dom';
 
 let currentCard = 0
 
 const Carousel = ({className, children, main}) => {
+
+    const navigate = useNavigate()
 
     const colors = ['#B15000', '#CE5033', '#7FA7A8', '#C22E20', 'lime']
 
@@ -32,6 +35,7 @@ const Carousel = ({className, children, main}) => {
     }
 
     const getVelocity2 = (touches) => {
+        // if (touches.length < 2) return 'click'
         if (touches.length < 3) return
         const startTime = touches.at(-3).time
         const endTime = touches.at(-1).time
@@ -64,12 +68,15 @@ const Carousel = ({className, children, main}) => {
         setTouches((state) => [...state, {time: e.timeStamp, positionX: e.touches[0].clientX}])
     }
 
-    const touchEnd = () => {
+    const touchEnd = (e) => {
         const velocity = getVelocity2(touches)
         setTouches([])
 
         if (velocity === undefined) {
             // здесь можно открывать проект
+            const { page } = e.target.dataset 
+            navigate(page)
+            return
         }
         else if (Math.abs(velocity) > 0.1) {
             currentCard += velocity < 0 ? 1 : -1
@@ -128,7 +135,7 @@ const Carousel = ({className, children, main}) => {
 
         getAnchors(cont.current)
 
-        // setting container width depend on children quantity
+        // setting container width depends on children quantity
         // можно это оставить в лэйауте, а остальное в обычном, как варик
         cont.current.style.width = `${children.length * 100}vw`
 

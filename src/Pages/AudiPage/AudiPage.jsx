@@ -1,10 +1,13 @@
 import cl from './AudiPage.module.css'
+import { useNavigate } from 'react-router-dom'
 
 const AudiPage = () => {
+    const navigate = useNavigate()
     return (
         <>
             <header className={cl.header}>
-                <h2>AUDI QUATTRO DAYS, Branding</h2>
+                <div onClick={() => navigate('/')} className={cl.titleBtn}>Project-d</div>
+                <h2>AUDI QUATTRO DAYS,<span> Key visual</span></h2>
             </header>
             <main className={cl.main}>
                 <section className={cl.section}>

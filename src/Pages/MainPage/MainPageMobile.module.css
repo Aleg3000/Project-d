@@ -4,6 +4,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #0F1010;
+    overflow: hidden;
 }
 
 /* чет сделать с тем что на яфоне не убирается снизу строка */

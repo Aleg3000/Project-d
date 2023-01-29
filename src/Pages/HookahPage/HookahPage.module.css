@@ -9,40 +9,70 @@
     scroll-behavior: smooth;
 }
 
-.projectImg {
-    position: absolute;
-    top: 0;
-    left: 0;
+.welcomeSection {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    /* background-color: #fff; */
+    background-color: #30BA09;
     background-position: center;
     background-size: cover;
     opacity: 1;
-    cursor: pointer;
-    background-image: url(../../assets/union.jpg);
 }
 
-.projectImg > h2 {
+
+.welcomeSection > h2 {
     /* width: 70rem; */
     height: 4.8rem;
     text-align: center;
     color: #fff;
-    font-family: 'Stolzl';
+    font-family: 'Stolzl', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 8rem;
     line-height: 8rem;
+    z-index: 2;
     /* opacity: 0; */
+}
+
+.welcomeSection > h2 > span {
+    font-family: 'Apple Garamond CYR';
+    text-transform: capitalize;
+    font-size: 1em;
+    line-height: 1;
+}
+
+.welcomeLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16.6rem;
+    height: 22rem;
+    mask-image: url(../../assets/union-hookah/logo-main.svg);
+    -webkit-mask-image: url(../../assets/union-hookah/logo-main.svg);
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: #000;
+}
+
+.titleBtn {
+    position: absolute;
+    top: 10rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-family: 'Stolzl', sans-serif;
+    color: #fff;
+    cursor: pointer;
 }
 
 .unionFirstBg {
     position: absolute;
     top: calc(100vh + 23rem);
-    left: 3.6rem;
+    left: 10rem;
     width: 95.5rem;
     height: 88rem;
     background-image: url(../../assets/union-hookah/bg.png);
@@ -52,7 +82,7 @@
 .unionFirstFont {
     position: absolute;
     top: calc(100vh + 23rem);
-    left: 3.6rem;
+    left: 10rem;
     width: 95.5rem;
     height: 88rem;
     background-image: url(../../assets/union-hookah/logo.png);
@@ -63,7 +93,7 @@
     z-index: 5;
     position: absolute;
     top: calc(100vh + 23rem);
-    left: 3.6rem;
+    left: 10rem;
     width: 95.5rem;
     height: 88rem;
     background-image: url(../../assets/union-hookah/logo2.png);
@@ -73,7 +103,7 @@
 .leftDudka {
     position: absolute;
     top: calc(100vh + 23rem + 800px);
-    left: 3.6rem;
+    left: 10rem;
     width: 95.5rem;
     height: 112.7rem;
     background-image: url(../../assets/union-hookah/truba_L.png);
@@ -83,7 +113,7 @@
 .rightDudka {
     position: absolute;
     top: calc(100vh + 23rem + 800px);
-    left: 3.6rem;
+    left: 10rem;
     width: 95.5rem;
     height: 112.7rem;
     background-image: url(../../assets/union-hookah/truba_R.png);

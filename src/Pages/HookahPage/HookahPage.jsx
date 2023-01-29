@@ -4,9 +4,12 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/src/ScrollTrigger'
 import { useLayoutEffect } from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 
 const HookahPage = () => {
+
+    const navigate = useNavigate()
 
     // useLayoutEffect(() => {
     //     const GlobalStyles = createGlobalStyle`
@@ -40,7 +43,7 @@ const HookahPage = () => {
     const whiteSquare = createRef()
     const mockUpContainer = createRef()
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
@@ -52,17 +55,6 @@ const HookahPage = () => {
                 // markers: true
             });
 
-            // gsap.from(firstBg.current, {
-            //     // x: 100,
-            //     scrollTrigger: {
-            //         trigger: firstBg.current,
-            //         scrub: true,
-            //         start: "top 100px",
-            //         end: "+=800",
-            //         pin: true
-            //     }
-            // })
-
             gsap.from(firstFont.current, {
                 x: '100vw',
                 // opacity: 0,
@@ -71,7 +63,8 @@ const HookahPage = () => {
                     scrub: 1,
                     start: "top 200px",
                     end: "+=800",
-                    pin: true
+                    pin: true,
+                    immediateRender: false /*  i should read about it, its prevents jumps using fast scroll */
                 }
             })
 
@@ -256,9 +249,12 @@ const HookahPage = () => {
 
     return (
         <div className={cl.content}>
-                    <div className={cl.projectImg}>
-                        <h2>UNION HOOKAH, Packing</h2>
+                    <div className={cl.welcomeSection}>
+                        <div onClick={() => navigate('/')} className={cl.titleBtn}>Project-d</div>
+                        <h2>UNION HOOKAH,<span> Branding</span></h2>
+                        <div className={cl.welcomeLogo}></div>
                     </div>
+                    
 
                     <div ref={firstBg} className={cl.unionFirstBg}></div>
                     <div ref={firstFont} className={cl.unionFirstFont}></div>

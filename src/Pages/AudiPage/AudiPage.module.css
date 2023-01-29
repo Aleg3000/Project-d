@@ -23,6 +23,23 @@
     /* opacity: 0; */
 }
 
+.header > h2 > span {
+    font-family: 'Apple Garamond CYR';
+    text-transform: capitalize;
+    font-size: 1em;
+    line-height: 1;
+}
+
+.titleBtn {
+    position: absolute;
+    top: 10rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-family: 'Stolzl', sans-serif;
+    color: #fff;
+    cursor: pointer;
+}
+
 .main {
     background-color: #0F1010;
     padding: 23rem 3.6rem;
