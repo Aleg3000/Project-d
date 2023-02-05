@@ -46,6 +46,9 @@ const HookahPage = () => {
     const nextProject = createRef()
 
     useLayoutEffect(() => {
+
+        window.scrollTo(0, 0)
+        
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {

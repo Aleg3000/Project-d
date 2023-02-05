@@ -10,7 +10,10 @@ const HookahCatalogPage = () => {
 
     const secondSection = createRef()
 
-    useEffect(() => {
+    useLayoutEffect(() => {
+
+        window.scrollTo(0, 0)
+
         gsap.registerPlugin(ScrollTrigger)
 
         const ctx = gsap.context(() => {
@@ -30,7 +33,7 @@ const HookahCatalogPage = () => {
         })
 
         return () => {ctx.revert()}
-    })
+    }, [secondSection])
 
     const navigate = useNavigate()
     return (

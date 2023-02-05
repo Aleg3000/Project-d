@@ -11,7 +11,7 @@ const MainCards = () => {
 
     const navigate = useNavigate()
 
-    const [context, setContext] = useContext(MyContext);
+    // const [context, setContext] = useContext(MyContext);
 
     const colors = ['#B15000', '#CE5033', '#7FA7A8', '#C22E20', 'lime']
 

@@ -1,8 +1,13 @@
 import cl from './AudiPage.module.css'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const AudiPage = () => {
     const navigate = useNavigate()
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <>
             <header className={cl.header}>
@@ -21,7 +26,7 @@ const AudiPage = () => {
                 </section>
             </main>
             <footer className={cl.footer}>
-                <h2>NEXT PROJECT</h2>
+            <h2 onClick={() => navigate('/font')}>NEXT PROJECT</h2>
             </footer>
         </>
         
