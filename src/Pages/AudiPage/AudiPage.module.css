@@ -2,7 +2,7 @@
 .header {
     width: 100vw;
     height: 100vh;
-    background-image: url(../../assets/audi.png);
+    background-image: url(../../assets/audi/title.png);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -43,7 +43,48 @@
 .main {
     background-color: #0F1010;
     padding: 23rem 3.6rem;
+    display: flex;
+    gap: 23rem;
+    flex-direction: column;
 }
+
+.main > div {
+    width: 69rem;
+    height: 69rem;
+}
+
+.audi1 {
+    background-image: url(../../assets/audi/audi1.png);
+    background-position: center;
+    background-size: cover;
+    align-self: flex-start;
+}
+
+.audi2 {
+    background-image: url(../../assets/audi/audi2.png);
+    background-position: center;
+    background-size: cover;
+    align-self: flex-end;
+}
+
+.audi3 {
+    background-image: url(../../assets/audi/audi3.png);
+    background-position: center;
+    background-size: cover;
+    align-self: center;
+    transform: translateX(-20%);
+}
+
+@media(max-width: 767px) {
+    .main > div {
+        height: 38rem;
+        width: 38rem;
+    }
+
+    .audi3 {
+        transform: none;
+    }
+  }
 
 .footer {
     width: 100vw;
@@ -68,33 +109,5 @@
     cursor: pointer;
 }
 
-.section {
-}
-
-.audi1 {
-    width: 68rem;
-    height: 68rem;
-    background-image: url(../../assets/audi/audi1.png);
-    background-position: center;
-    background-size: cover;
-}
-
-.audi2 {
-    margin: 23rem 0 23rem auto;
-    width: 71.3rem;
-    height: 71.3rem;
-    background-image: url(../../assets/audi/audi2.png);
-    background-position: center;
-    background-size: cover;
-}
-
-.audi3 {
-    margin-left: 24.2rem;
-    width: 71.3rem;
-    height: 69rem;
-    background-image: url(../../assets/audi/audi3.png);
-    background-position: center;
-    background-size: cover;
-}
 
 

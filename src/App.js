@@ -43,6 +43,22 @@ function App() {
       path: "/",
       element: <MainPageMobile />,
     },
+    {
+      path: '/hookahBrand',
+      element: <HookahPage />
+    },
+    {
+      path: '/hookahCatalog',
+      element: <HookahCatalogPage />
+    },
+    {
+      path: '/font',
+      element: <FontPage />
+    },
+    {
+      path: '/audi',
+      element: <AudiPage />
+    },
   ],
   { basename: "/Project-d" });
 

@@ -69,14 +69,34 @@
 }
 
 .card:nth-child(2) {
-    background-image: url(../../assets/union.jpg);
+    position: relative;
+    background-color: #30BA09;
+    background-image: none;
 }
+
+.card:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16.6rem;
+    height: 22rem;
+    /* make it smaller */
+    mask-image: url(../../assets/union-hookah/logo-main.svg);
+    -webkit-mask-image: url(../../assets/union-hookah/logo-main.svg);
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: #000;
+}
+
 .card:nth-child(3) {
     background-image: url(../../assets/3d.png);
 }
 .card:nth-child(4) {
-    background-image: url(../../assets/audi.png);
+    background-image: url(../../assets/audi/title.png);
 }
 .card:nth-child(5) {
-    background-image: url(../../assets/font.png);
+    background-image: url(../../assets/font/title.png);
 }

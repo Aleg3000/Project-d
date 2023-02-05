@@ -11,16 +11,6 @@ const HookahPage = () => {
 
     const navigate = useNavigate()
 
-    // useLayoutEffect(() => {
-    //     const GlobalStyles = createGlobalStyle`
-    //         html {
-    //             --color-text: black;
-    //             --color-background: white;
-    //             --color-primary: rebeccapurple;
-    //         }
-    //         `;
-    // })
-
     const firstBg = createRef()
     const firstFont = createRef()
     const leftDudka = createRef()
@@ -48,7 +38,7 @@ const HookahPage = () => {
     useLayoutEffect(() => {
 
         window.scrollTo(0, 0)
-        
+
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
@@ -86,7 +76,10 @@ const HookahPage = () => {
             })
 
             gsap.from(logoU.current, {
-                x: '40rem',
+                x: function(index, target, targets) { 
+                    return target.clientWidth * 0.42; 
+                },
+                // xPercent: 50,
                 duration: 0.6,
                 // repeat: -1,
                 // repeatDelay: 3,
@@ -210,24 +203,6 @@ const HookahPage = () => {
                 }
             })
 
-            // gsap.to(nextProject.current, {
-            //     scrollTrigger: {
-            //         trigger: whiteSquareContainer.current,
-            //         start: 'center center',
-            //         end: '+=2000',
-            //         pin: true,
-            //         markers: true,
-            //     }
-            // })
-
-            // ScrollTrigger.create({
-            //     trigger: nextProject.current,
-            //     pin: true,
-            //     start: 'center center',
-            //     end: '+=2000',
-            //     markers: true
-            // });
-
             gsap.to(whiteSquare.current, {
                 height: '100vh',
                 width: '100vw',
@@ -279,7 +254,7 @@ const HookahPage = () => {
 
         return () => {ctx.revert()} /* clean up */
     }
-    ,[firstBg, firstFont, overflowFont, logoU, logoNion, logoHookah, topMotionText, centerMotionText, blackSquareContainer, blackSquare, sitePage, whiteSquareContainer, whiteSquare, mockUpContainer])
+    ,[firstBg, firstFont, overflowFont, logoU, logoNion, logoHookah, topMotionText, centerMotionText, blackSquareContainer, blackSquare, sitePage, whiteSquareContainer, whiteSquare, mockUpContainer, nextProject])
 
 
 

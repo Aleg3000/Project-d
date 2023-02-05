@@ -15,15 +15,9 @@ const AudiPage = () => {
                 <h2>AUDI QUATTRO DAYS,<span> Key visual</span></h2>
             </header>
             <main className={cl.main}>
-                <section className={cl.section}>
-                    <div className={cl.audi1}></div>
-                </section>
-                <section className={cl.section}>
-                    <div className={cl.audi2}></div>
-                </section>
-                <section className={cl.section}>
-                    <div className={cl.audi3}></div>
-                </section>
+                <div className={cl.audi1}></div>
+                <div className={cl.audi2}></div>
+                <div className={cl.audi3}></div>
             </main>
             <footer className={cl.footer}>
             <h2 onClick={() => navigate('/font')}>NEXT PROJECT</h2>
