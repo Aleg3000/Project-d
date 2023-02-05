@@ -11,8 +11,6 @@
 }
 
 .header > h2 {
-    /* width: 70rem; */
-    height: 4.8rem;
     text-align: center;
     color: #fff;
     font-family: 'Stolzl';
@@ -98,7 +96,6 @@
 }
 
 .footer > h2 {
-    height: 4.8rem;
     text-align: center;
     color: #fff;
     font-family: 'Stolzl';

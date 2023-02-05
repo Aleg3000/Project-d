@@ -16,7 +16,6 @@
 }
 
 .welcomeSection > h2 {
-    height: 4.8rem;
     text-align: center;
     color: #fff;
     font-family: 'Stolzl', sans-serif;
@@ -146,7 +145,6 @@
 }
 
 .footer > h2 {
-    height: 4.8rem;
     text-align: center;
     color: #fff;
     font-family: 'Stolzl';
