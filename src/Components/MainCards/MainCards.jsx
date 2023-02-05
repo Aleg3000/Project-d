@@ -16,14 +16,14 @@ const MainCards = () => {
     const colors = ['#B15000', '#CE5033', '#7FA7A8', '#C22E20', 'lime']
 
     const cards = [
-        'PORSCHE DAKAR, Testing',
+        'UNION HOOKAH, Catalog',
         'UNION HOOKAH, Branding',
         '3D LETTERING, Lettering',
         'AUDI QUATTRO DAYS, Key visual',
         'OUCE, Type',
     ]
 
-    const dataSet = ['test', 'hookah', 'threeD', 'audi', 'font']
+    const dataSet = ['hookahCatalog', 'hookahBrand', 'threeD', 'audi', 'font']
 
     function slideCard(mode, card, i, e) {
         const title = card.firstChild

@@ -1,0 +1,165 @@
+.container {
+    overflow-x: hidden;
+}
+
+.welcomeSection {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/union-hookah-catalog/title.png);
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+}
+
+.welcomeSection > h2 {
+    height: 4.8rem;
+    text-align: center;
+    color: #fff;
+    font-family: 'Stolzl', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8rem;
+    line-height: 8rem;
+    z-index: 2;
+}
+
+.welcomeSection > h2 > span {
+    font-family: 'Apple Garamond CYR';
+    text-transform: capitalize;
+    font-size: 1em;
+    line-height: 1;
+}
+
+.titleBtn {
+    position: absolute;
+    top: 10rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-family: 'Stolzl', sans-serif;
+    color: #fff;
+    cursor: pointer;
+}
+
+.firstSection {
+    display: flex;
+    flex-direction: column;
+    padding: 20rem 3.6rem;
+    gap: 20rem;
+    background-color: #000;
+}
+
+.firstSection > div:first-child {
+    width: 71.3rem;
+    height: 78.6rem;
+    background-image: url(../../assets/union-hookah-catalog/1.png);
+    background-position: center;
+    background-size: cover;
+    align-self: flex-end;
+}
+
+.firstSection > div:last-child {
+    width: 97rem;
+    height: 69rem;
+    background-image: url(../../assets/union-hookah-catalog/2.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.secondSection {
+    padding: 3.6rem 3.6rem;
+    gap: 3.6rem;
+    display: flex;
+    height: 100vh;
+    width: 400vw;
+    background-color: #000;
+}
+
+.pageView:nth-child(1) {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/union-hookah-catalog/page1.png);
+    background-position: center;
+    background-size: cover;
+}
+.pageView:nth-child(2) {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/union-hookah-catalog/page2.png);
+    background-position: center;
+    background-size: cover;
+}
+.pageView:nth-child(3) {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/union-hookah-catalog/page3.png);
+    background-position: center;
+    background-size: cover;
+}
+.pageView:nth-child(4) {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/union-hookah-catalog/page4.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.thirdSection {
+    display: flex;
+    flex-direction: column;
+    padding: 20rem 3.6rem;
+    gap: 20rem;
+    background-color: #000;
+}
+
+.thirdSection > div:nth-child(1) {
+    width: calc(100vw - 7.2rem);
+    height: 100vw;
+    background-image: url(../../assets/union-hookah-catalog/3.png);
+    background-position: center;
+    background-size: cover;
+    /* align-self: flex-end; */
+}
+
+.thirdSection > div:nth-child(2) {
+    width: 95.5rem;
+    height: 73.4rem;
+    background-image: url(../../assets/union-hookah-catalog/4.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.thirdSection > div:nth-child(3) {
+    width: 95.6rem;
+    height: 65.7rem;
+    background-image: url(../../assets/union-hookah-catalog/5.png);
+    background-position: center;
+    background-size: cover;
+    align-self: center;
+}
+
+.footer {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/union-hookah-catalog/final.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer > h2 {
+    height: 4.8rem;
+    text-align: center;
+    color: #fff;
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8rem;
+    line-height: 8rem;
+    cursor: pointer;
+}

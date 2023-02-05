@@ -1,7 +1,6 @@
 import MainPage from './Pages/MainPage/MainPage';
 import { createContext } from 'react';
 import { useState } from 'react';
-import ProjectPage from './Pages/ProjectPage/ProjectPage';
 import HookahPage from './Pages/HookahPage/HookahPage';
 import { useMatchMedia } from './hooks/use-match-media';
 import MainPageMobile from './Pages/MainPage/MainPageMobile';
@@ -9,6 +8,7 @@ import AudiPage from './Pages/AudiPage/AudiPage';
 import ThreeDPage from './Pages/ThreeD/ThreeDPage';
 import FontPage from './Pages/FontPage/FontPage';
 import { Routes, Route } from 'react-router-dom';
+import HookahCatalogPage from './Pages/HookahCatalogPage/HookahCatalogPage';
 
 export const MyContext = createContext(null);
 
@@ -18,8 +18,8 @@ const defaultV =  {
 }
 
 const pages = {
-  test: <ProjectPage />,
-  hookah: <HookahPage />,
+  hookahCatalog: <HookahCatalogPage />,
+  hookahBrand: <HookahPage />,
   audi: <AudiPage />,
   threeD: <ThreeDPage />,
   font: <FontPage />,
@@ -45,11 +45,11 @@ function App() {
     } */}
     <Routes>
           <Route index element={isMobile ? <MainPageMobile /> : <MainPage />} />
-          <Route path='hookah' element={<HookahPage />} />
+          <Route path='hookahBrand' element={<HookahPage />} />
           <Route path='audi' element={<AudiPage />} />
           <Route path='threeD' element={<ThreeDPage />} />
           <Route path='font' element={<FontPage />} />
-          <Route path='test' element={<ProjectPage />} />
+          <Route path='hookahCatalog' element={<HookahCatalogPage />} />
     </Routes>
   </MyContext.Provider>
     

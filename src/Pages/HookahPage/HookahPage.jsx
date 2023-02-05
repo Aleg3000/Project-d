@@ -21,11 +21,11 @@ const HookahPage = () => {
     //         `;
     // })
 
-    const firstBg = createRef();
-    const firstFont = createRef();
-    const leftDudka = createRef();
-    const rightDudka = createRef();
-    const overflowFont = createRef();
+    const firstBg = createRef()
+    const firstFont = createRef()
+    const leftDudka = createRef()
+    const rightDudka = createRef()
+    const overflowFont = createRef()
 
     const logoU = createRef()
     const logoNion = createRef()
@@ -42,6 +42,8 @@ const HookahPage = () => {
     const whiteSquareContainer = createRef()
     const whiteSquare = createRef()
     const mockUpContainer = createRef()
+
+    const nextProject = createRef()
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -88,7 +90,7 @@ const HookahPage = () => {
                 scrollTrigger: {
                     trigger: logoU.current,
                     start: '25% center',
-                    markers: true,
+                    // markers: true,
                     toggleActions: 'play reset play reset'
                 }
             })
@@ -128,7 +130,7 @@ const HookahPage = () => {
                     trigger: topMotionText.current,
                     start: '25% center',
                     toggleActions: 'play reverse play reverse',
-                    markers: true
+                    // markers: true
                 }
             })
 
@@ -152,7 +154,7 @@ const HookahPage = () => {
                     // scrub: 1,
                     end: "+=1000",
                     pin: true,
-                    markers: true
+                    // markers: true
                 }
             })
 
@@ -191,9 +193,37 @@ const HookahPage = () => {
                     // scrub: 1,
                     end: "+=1000",
                     pin: true,
+                    // onEnter: () => console.log('enter'),
+                    onEnterBack: () => {
+                        nextProject.current.style.display = 'none'
+                        console.log('enter back')
+                    },
+                    onLeave: () => {
+                        console.log('leave')
+                        nextProject.current.style.display = 'flex'
+                    },
+                    // onLeaveBack: () => console.log('leave back'),
                     markers: true
                 }
             })
+
+            // gsap.to(nextProject.current, {
+            //     scrollTrigger: {
+            //         trigger: whiteSquareContainer.current,
+            //         start: 'center center',
+            //         end: '+=2000',
+            //         pin: true,
+            //         markers: true,
+            //     }
+            // })
+
+            // ScrollTrigger.create({
+            //     trigger: nextProject.current,
+            //     pin: true,
+            //     start: 'center center',
+            //     end: '+=2000',
+            //     markers: true
+            // });
 
             gsap.to(whiteSquare.current, {
                 height: '100vh',
@@ -220,6 +250,9 @@ const HookahPage = () => {
                     "50%":  { top: '50vh', left: '50vw', width: 0, height: 0},
                     "100%": { top: 0, left: 0, width: '100vw', height: '100vh'},
                    },
+                // onStart: () => {
+                //     console.log('hi')
+                //     nextProject.current.style.display = 'flex'}
             })
 
         }, firstBg, firstFont, logoU, logoNion, logoHookah, topMotionText, centerMotionText)
@@ -285,6 +318,10 @@ const HookahPage = () => {
                         <div ref={mockUpContainer} className={cl.mockUpContainer}>
                             <div className={cl.mockUpBook}></div>
                         </div>
+                    </div>
+
+                    <div ref={nextProject} className={cl.nextProject}>
+                        <div onClick={() => navigate('/audi')}>next project</div>
                     </div>
                     
             </div>

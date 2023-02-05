@@ -234,6 +234,7 @@
 }
 
 .whiteSquareContainer {
+    z-index: 2;
     margin: 40rem 0;
     position: absolute;
     top: calc(100vh + 23rem + 800px + 112.7rem + 32rem + 36rem + 40rem + 112.5rem + 100vh + 1000px);
@@ -252,6 +253,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .logo {
@@ -283,4 +285,26 @@
     background-image: url(../../assets/union-hookah/site-animation/book.jpg);
     background-size: cover;
     background-position: center;
+}
+
+.nextProject {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: pink; */
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextProject > div {
+    text-transform: uppercase;
+    font-family: 'Stolzl', sans-serif;
+    font-size: 8rem;
+    line-height: 9.6rem;
+    color: #fff;
+    cursor: pointer;
 }
