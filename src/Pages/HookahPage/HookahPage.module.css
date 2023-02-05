@@ -24,8 +24,6 @@
 
 
 .welcomeSection > h2 {
-    /* width: 70rem; */
-    height: 4.8rem;
     text-align: center;
     color: #fff;
     font-family: 'Stolzl', sans-serif;
@@ -34,7 +32,6 @@
     font-size: 8rem;
     line-height: 8rem;
     z-index: 2;
-    /* opacity: 0; */
 }
 
 .welcomeSection > h2 > span {

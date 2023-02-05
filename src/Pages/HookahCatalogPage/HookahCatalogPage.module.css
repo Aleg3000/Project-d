@@ -16,7 +16,6 @@
 }
 
 .welcomeSection > h2 {
-    height: 4.8rem;
     text-align: center;
     color: #fff;
     font-family: 'Stolzl', sans-serif;
@@ -78,33 +77,27 @@
     background-color: #000;
 }
 
+.pageView {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
 .pageView:nth-child(1) {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../../assets/union-hookah-catalog/page1.png);
-    background-position: center;
-    background-size: cover;
 }
+
 .pageView:nth-child(2) {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../../assets/union-hookah-catalog/page2.png);
-    background-position: center;
-    background-size: cover;
 }
+
 .pageView:nth-child(3) {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../../assets/union-hookah-catalog/page3.png);
-    background-position: center;
-    background-size: cover;
 }
+
 .pageView:nth-child(4) {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../../assets/union-hookah-catalog/page4.png);
-    background-position: center;
-    background-size: cover;
 }
 
 .thirdSection {
@@ -153,7 +146,6 @@
 }
 
 .footer > h2 {
-    height: 4.8rem;
     text-align: center;
     color: #fff;
     font-family: 'Stolzl';
@@ -163,3 +155,68 @@
     line-height: 8rem;
     cursor: pointer;
 }
+
+@media(max-width: 767px) {
+
+    .welcomeSection > h2 {
+        height: 2rem;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .firstSection {
+        padding: 20rem 2.6rem 0 2.6rem;
+        gap: 15rem;
+        align-items: center;
+    }
+
+    .firstSection > div:first-child {
+        width: 37.6rem;
+        height: 41.4rem;
+        align-self: center;
+    }
+    
+    .firstSection > div:last-child {
+        width: 37.6rem;
+        height: 27rem;
+    }
+
+    .pageView {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(../../assets/union-hookah-catalog/page1.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .thirdSection {
+        padding: 0 3.6rem 20rem 3.6rem;
+        gap: 15rem;
+        align-items: center;
+    }
+
+    .thirdSection > div:nth-child(1) {
+        width: 37.5rem;
+        height: 38rem;
+    }
+    
+    .thirdSection > div:nth-child(2) {
+        width: 37.5rem;
+        height: 29rem;
+    }
+    
+    .thirdSection > div:nth-child(3) {
+        width: 37.5rem;
+        height: 26rem;
+    }
+
+    .footer {
+        background-image: url(../../assets/union-hookah-catalog/final-mobile.jpg);
+    }
+    
+    .footer > h2 {
+        font-size: 3rem;
+        line-height: 3.6rem;
+    }
+  }
