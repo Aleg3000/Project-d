@@ -1,6 +1,7 @@
-import { createRef, useState, useLayoutEffect, useEffect } from 'react';
+import { useState, useLayoutEffect, useEffect } from 'react';
 import gsap from 'gsap'
 import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
 let currentCard = 0
 
@@ -8,9 +9,9 @@ const Carousel = ({className, children, main}) => {
 
     const navigate = useNavigate()
 
-    const colors = ['#B15000', '#CE5033', '#7FA7A8', '#C22E20', 'lime']
+    const colors = ['#C6C6C6', '#0D2805', '#7FA7A8', '#E5291F', '#46442D']
 
-    const cont = createRef();
+    const cont = useRef();
 
     const [startPos, setStartPos] = useState(0);
 
@@ -21,18 +22,18 @@ const Carousel = ({className, children, main}) => {
 
     const [anchors, setAnchors] = useState([])
 
-    const getVelocity = (touches) => {
-        if (touches.length < 2) return
-        const startTime = touches.time
-        const endTime = touches.at(-1).time
+    // const getVelocity = (touches) => {
+    //     if (touches.length < 2) return
+    //     const startTime = touches.time
+    //     const endTime = touches.at(-1).time
 
-        const startPosX = touches[0].positionX
-        const finishPosX = touches.at(-1).positionX
+    //     const startPosX = touches[0].positionX
+    //     const finishPosX = touches.at(-1).positionX
 
-        const velocity = (finishPosX - startPosX) / (endTime - startTime)
+    //     const velocity = (finishPosX - startPosX) / (endTime - startTime)
 
-        return velocity
-    }
+    //     return velocity
+    // }
 
     const getVelocity2 = (touches) => {
         // if (touches.length < 2) return 'click'
@@ -73,9 +74,34 @@ const Carousel = ({className, children, main}) => {
         setTouches([])
 
         if (velocity === undefined) {
+            function openCard(e) {
+                const a = e.target.cloneNode(true)
+                a.style.position = 'absolute'
+                a.style.top = e.target.getBoundingClientRect().top + 'px'
+                a.style.left = e.target.getBoundingClientRect().left + 'px'
+                a.style.height = e.target.getBoundingClientRect().height + 'px'
+                document.body.appendChild(a)
+
+                const { dataset: { page } } = e.target
+
+                gsap.to(a, { 
+                    // width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',
+                    duration: 2,
+                    onComplete: () => {
+                        navigate(page)
+                        document.querySelector('meta[name="theme-color"]').setAttribute("content", '#0F1010');
+                        setTimeout(() => a.remove(), 0);
+                    },
+                    keyframes: {
+                        '0%': {width: a.style.width, height: a.style.height, top: a.style.top, left: a.style.left, borderRadius: '10px'},
+                        '50%': {width: '100vw', height: a.style.height, top: a.style.top, left: 0, borderRadius: '0px'},
+                        '100%': {width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',}
+                    }
+                })
+        }
             // здесь можно открывать проект
-            const { page } = e.target.dataset 
-            navigate(page)
+
+            openCard(e)
             return
         }
         else if (Math.abs(velocity) > 0.1) {
@@ -122,16 +148,21 @@ const Carousel = ({className, children, main}) => {
 
     function update() {
         getAnchors(cont.current)
-        console.log('resize')
+    }
+
+    useEffect(() => {
         cont.current.style.transform = `translateX(${-anchors[currentCard]}px)`
+
         setLastPos(anchors[currentCard])
         setLastTouch(-anchors[currentCard])
-    }
+    }, [anchors])
 
     const [isUpdated, setIsUpdated] = useState(false)
 
     useLayoutEffect(() => {
         window.addEventListener('resize', () => setIsUpdated((state) => !state))
+
+        // document.body.style.overflow = 'hidden'
 
         getAnchors(cont.current)
 
@@ -143,12 +174,13 @@ const Carousel = ({className, children, main}) => {
 
     useEffect(() => {
         // setting new theme
+        // console.log(currentCard)
         document.querySelector('meta[name="theme-color"]').setAttribute("content", colors[currentCard]);
 
         if (main.current) main.current.style.backgroundColor = colors[currentCard]
     }, [])
 
-    useLayoutEffect(update, [isUpdated])
+    useEffect(update, [isUpdated])
 
     return (
             <div 
