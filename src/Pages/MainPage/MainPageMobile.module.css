@@ -12,26 +12,17 @@
 /* // сделать на гридах, add minmax */
 
 .title {
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    height: 20vh; */
-    /* width: 100vw; */
     text-align: center;
     line-height: 20vh;
     font-family: 'Stolzl';
     font-style: normal;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #fff;
+    z-index: 2;
 }
 
 .aboutBtn {
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 20vh;
-    width: 100vw; */
     text-align: center;
     line-height: 20vh;
     font-family: 'Stolzl';
@@ -58,30 +49,55 @@
 
 .card {
     /* margin: 0 1.5rem; */
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: calc(100vw - 60px);
     border-radius: 10px;
-    background-image: url(../../assets/union-hookah-catalog/title.png);
+    /* background-image: url(../../assets/union-hookah-catalog/title.png); */
     background-size: cover;
     background-position: center;
     /* object-fit: cover; */
 }
 
-.card:nth-child(2) {
+.card > h2 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.card > h2 > span {
+    font-family: 'Apple Garamond CYR';
+    text-transform: capitalize;
+    font-size: 1em;
+    line-height: 1;
+}
+
+.card1 {
+    background-image: url(../../assets/union-hookah-catalog/title.png);
+}
+
+.card2 {
     position: relative;
     background-color: #30BA09;
     background-image: none;
 }
 
-.card:nth-child(2)::after {
+.card2::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 16.6rem;
-    height: 22rem;
+    width: 6.4rem;
+    height: 8rem;
     /* make it smaller */
     mask-image: url(../../assets/union-hookah/logo-main.svg);
     -webkit-mask-image: url(../../assets/union-hookah/logo-main.svg);
@@ -91,12 +107,12 @@
     background-color: #000;
 }
 
-.card:nth-child(3) {
+.card3 {
     background-image: url(../../assets/3d.png);
 }
-.card:nth-child(4) {
+.card4 {
     background-image: url(../../assets/audi/title.png);
 }
-.card:nth-child(5) {
-    background-image: url(../../assets/font/title.png);
+.card5 {
+    background-image: url(../../assets/font/title-mobile.png);
 }

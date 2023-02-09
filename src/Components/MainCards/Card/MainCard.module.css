@@ -11,6 +11,7 @@
     opacity: 1;
     cursor: pointer;
     will-change: width, opacity, top, left, border-radius;
+    font-size: 1rem;
 }
 
 .card1 {
@@ -40,8 +41,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 16.6rem;
-    height: 22rem;
+    /* width: 16.6rem;
+    height: 22rem; */
+    width: 6.64em;
+    height: 8.8em;
     /* make it smaller */
     mask-image: url(../../../assets/union-hookah/logo-main.svg);
     -webkit-mask-image: url(../../../assets/union-hookah/logo-main.svg);

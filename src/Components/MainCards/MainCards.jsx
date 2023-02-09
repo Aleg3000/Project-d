@@ -13,7 +13,7 @@ const MainCards = () => {
 
     // const [context, setContext] = useContext(MyContext);
 
-    const colors = ['#B15000', '#CE5033', '#7FA7A8', '#C22E20', 'lime']
+    const colors = ['#C6C6C6', '#0D2805', '#7FA7A8', '#E5291F', '#46442D']
 
     const cards = [
         'UNION HOOKAH, Catalog',
@@ -62,9 +62,12 @@ const MainCards = () => {
 
             console.log(page)
 
+            console.log(a)
+
             gsap.to(title, { fontSize: '8rem', lineHeight: '8rem', opacity: 1 })
-            gsap.to(a, { width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',
-                // duration: 2,
+            gsap.to(a, { width: '100vw', height: '100vh', top: '0', left: '0', fontSize: '2.5rem',
+                borderRadius: '0',
+                duration: 0.5,
                 onComplete: () => {
                 // setContext({isProject: true, currentPage: page})
 

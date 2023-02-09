@@ -1,5 +1,5 @@
 
-.header {
+.welcomeSection {
     width: 100vw;
     height: 100vh;
     background-image: url(../../assets/audi/title.png);
@@ -10,7 +10,7 @@
     justify-content: center;
 }
 
-.header > h2 {
+.welcomeSection > h2 {
     text-align: center;
     color: #fff;
     font-family: 'Stolzl';
@@ -21,7 +21,7 @@
     /* opacity: 0; */
 }
 
-.header > h2 > span {
+.welcomeSection > h2 > span {
     font-family: 'Apple Garamond CYR';
     text-transform: capitalize;
     font-size: 1em;
@@ -73,17 +73,6 @@
     transform: translateX(-20%);
 }
 
-@media(max-width: 767px) {
-    .main > div {
-        height: 38rem;
-        width: 38rem;
-    }
-
-    .audi3 {
-        transform: none;
-    }
-  }
-
 .footer {
     width: 100vw;
     height: 100vh;
@@ -106,5 +95,30 @@
     cursor: pointer;
 }
 
+@media(max-width: 767px) {
 
+    .titleBtn {
+        top: 10vh;
+        transform: translateY(-50%);
+    }
+
+    .welcomeSection > h2 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    .main > div {
+        height: 38rem;
+        width: 38rem;
+    }
+
+    .audi3 {
+        transform: none;
+    }
+
+    .footer > h2 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+  }
 

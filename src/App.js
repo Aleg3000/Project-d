@@ -1,14 +1,12 @@
 import MainPage from './Pages/MainPage/MainPage';
-import { createContext } from 'react';
-import { useState } from 'react';
 import HookahPage from './Pages/HookahPage/HookahPage';
 import { useMatchMedia } from './hooks/use-match-media';
 import MainPageMobile from './Pages/MainPage/MainPageMobile';
 import AudiPage from './Pages/AudiPage/AudiPage';
-import ThreeDPage from './Pages/ThreeD/ThreeDPage';
 import FontPage from './Pages/FontPage/FontPage';
-import { Routes, Route, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HookahCatalogPage from './Pages/HookahCatalogPage/HookahCatalogPage';
+import FontPageMobile from './Pages/FontPage/FontPageMobile';
 
 function App() {
 
@@ -53,7 +51,7 @@ function App() {
     },
     {
       path: '/font',
-      element: <FontPage />
+      element: <FontPageMobile />
     },
     {
       path: '/audi',
@@ -64,17 +62,7 @@ function App() {
 
 
   
-  return (
-    <RouterProvider router={isMobile ? mobileRouter : desktopRouter} />
-    // <Routes>
-    //       <Route index element={isMobile ? <MainPageMobile /> : <MainPage />} />
-    //       <Route path='hookahBrand' element={<HookahPage />} />
-    //       <Route path='audi' element={<AudiPage />} />
-    //       <Route path='threeD' element={<ThreeDPage />} />
-    //       <Route path='font' element={<FontPage />} />
-    //       <Route path='hookahCatalog' element={<HookahCatalogPage />} />
-    // </Routes>
-  );
+  return <RouterProvider router={isMobile ? mobileRouter : desktopRouter} />
 }
 
 export default App;

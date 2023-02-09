@@ -10,7 +10,7 @@ const AudiPage = () => {
     }, [])
     return (
         <>
-            <header className={cl.header}>
+            <header className={cl.welcomeSection}>
                 <div onClick={() => navigate('/')} className={cl.titleBtn}>Project-d</div>
                 <h2>AUDI QUATTRO DAYS,<span> Key visual</span></h2>
             </header>
