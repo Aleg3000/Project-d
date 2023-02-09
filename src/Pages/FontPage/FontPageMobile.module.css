@@ -9,7 +9,7 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-image: url(../../assets/font/title.png);
+    background-image: url(../../assets/font/title-mobile.png);
     background-position: center;
     background-size: cover;
     opacity: 1;
@@ -21,8 +21,8 @@
     font-family: 'Stolzl', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 8rem;
-    line-height: 8rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
     z-index: 2;
 }
 
@@ -35,7 +35,8 @@
 
 .titleBtn {
     position: absolute;
-    top: 10rem;
+    top: 10vh;
+    transform: translateY(-50%);
     font-size: 2rem;
     line-height: 2.4rem;
     font-family: 'Stolzl', sans-serif;
@@ -44,9 +45,11 @@
 }
 
 .firstSection {
+    margin-top: 10rem;
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1.3rem;
@@ -89,8 +92,8 @@
 
 
 .secondSection {
-    height: 144rem;
-    margin: 3.6rem;
+    height: 90rem;
+    margin: 0 0.6rem;
     background-image: url(../../assets/font/alphabet.png);
     background-position: center;
     background-size: contain;
@@ -98,22 +101,54 @@
 }
 
 .thirdSection {
-    margin: 20rem 0;
-    height: 80vw;
-    width: 100vw;
-    background-image: url(../../assets/font/background.jpg);
+    margin: 4.5rem 0;
+    /* height: 80vw; */
+    /* width: 100vw; */
+    /* background-image: url(../../assets/font/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    gap: 14rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.fontContainer {
+    width: 23rem;
+    height: 61rem;
     background-size: cover;
 }
 
-.mask {
-    width: 100vw;
-    height: 80vw;
-    background-image: url(../../assets/font/mask.png);
-    background-position: center;
+.fontContainer:nth-child(1) {
+    background-image: url(../../assets/font/font1.jpg);
+}
+
+.fontContainer:nth-child(2) {
+    background-image: url(../../assets/font/font2.jpg);
+}
+
+.fontContainer:nth-child(3) {
+    background-image: url(../../assets/font/font3.jpg);
+}
+
+.font {
+    width: 100%;
+    height: 100%;
     background-size: cover;
-    /* background-repeat: no-repeat; */
+}
+
+.fontContainer:nth-child(1) > .font {
+    background-image: url(../../assets/font/font1_1.png);
+}
+
+.fontContainer:nth-child(2) > .font {
+    background-image: url(../../assets/font/font2_2.png);
+}
+
+.fontContainer:nth-child(3) > .font {
+    background-image: url(../../assets/font/font3_3.png);
 }
 
 .footer {
@@ -133,7 +168,7 @@
     font-family: 'Stolzl';
     font-style: normal;
     font-weight: 400;
-    font-size: 8rem;
-    line-height: 8rem;
+    font-size: 3rem;
+    line-height: 3rem;
     cursor: pointer;
 }

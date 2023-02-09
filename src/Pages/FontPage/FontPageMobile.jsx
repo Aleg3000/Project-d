@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import cl from './FontPage.module.css'
+import cl from './FontPageMobile.module.css'
 
-const FontPage = () => {
+const FontPageMobile = () => {
     const navigate = useNavigate()
     return (
         <div className={cl.container}>
@@ -22,7 +22,15 @@ const FontPage = () => {
                 <section className={cl.secondSection}></section>
 
                 <section className={cl.thirdSection}>
-                    <div className={cl.mask}></div>
+                    <div className={cl.fontContainer}>
+                        <div className={cl.font}></div>
+                    </div>
+                    <div className={cl.fontContainer}>
+                        <div className={cl.font}></div>
+                    </div>
+                    <div className={cl.fontContainer}>
+                        <div className={cl.font}></div>
+                    </div>
                 </section>
              </main>
 
@@ -33,4 +41,4 @@ const FontPage = () => {
     )
 }
 
-export default FontPage
+export default FontPageMobile
