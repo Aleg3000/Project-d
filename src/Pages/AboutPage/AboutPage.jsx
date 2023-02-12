@@ -7,6 +7,7 @@ const AboutPage = () => {
     const navigate = useNavigate()
 
     const container = useRef()
+    const title = useRef()
     const first = useRef()
     const second = useRef()
     const third = useRef()
@@ -20,7 +21,12 @@ const AboutPage = () => {
         console.log(window.scrollY)
         const ctx = gsap.context(() => {
             const tl = gsap.timeline()
-            tl.to(container.current, { backgroundColor: '#F2F2F2', duration: 1, ease: 'linear'})
+            // tl.to(container.current, { backgroundColor: '#F2F2F2', duration: 1, ease: 'linear'})
+            tl.from(title.current, {
+                opacity: 0,
+                xPercent: 100,
+                duration: 1
+            })
             tl.to(first.current, {opacity: 1, duration: 1})
             tl.to(second.current, {opacity: 1, duration: 1})
             tl.to(third.current, {opacity: 1, duration: 1})
@@ -37,7 +43,7 @@ const AboutPage = () => {
     return (
         <main ref={container} className={cl.aboutContainer}>
             <div className={cl.contactInfoContainer}>
-                <h2 className={cl.title}>Project—d</h2>
+                <h2  ref={title} className={cl.title}>Project—d</h2>
                 <div ref={fifth} style={{opacity: 0}} className={cl.contactsContainer}>
                     <div>+7 999 122 22 74</div>
                     <div>info@project-d.com</div>
