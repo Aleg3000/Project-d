@@ -1,39 +1,38 @@
 import cl from './HookahPage.module.css'
-import { useEffect, createRef } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/src/ScrollTrigger'
 import { useLayoutEffect } from 'react'
-import { createGlobalStyle } from 'styled-components'
 import { useNavigate } from 'react-router-dom'
+import { useRef } from 'react'
 
 
 const HookahPage = () => {
 
     const navigate = useNavigate()
 
-    const firstBg = createRef()
-    const firstFont = createRef()
-    const leftDudka = createRef()
-    const rightDudka = createRef()
-    const overflowFont = createRef()
+    const firstBg = useRef()
+    const firstFont = useRef()
+    const leftDudka = useRef()
+    const rightDudka = useRef()
+    const overflowFont = useRef()
 
-    const logoU = createRef()
-    const logoNion = createRef()
-    const logoHookah = createRef()
+    const logoU = useRef()
+    const logoNion = useRef()
+    const logoHookah = useRef()
 
-    const bags = createRef()
-    const topMotionText = createRef()
-    const centerMotionText = createRef()
+    const bags = useRef()
+    const topMotionText = useRef()
+    const centerMotionText = useRef()
 
-    const blackSquareContainer = createRef()
-    const blackSquare = createRef()
-    const sitePage = createRef()
+    const blackSquareContainer = useRef()
+    const blackSquare = useRef()
+    const sitePage = useRef()
 
-    const whiteSquareContainer = createRef()
-    const whiteSquare = createRef()
-    const mockUpContainer = createRef()
+    const whiteSquareContainer = useRef()
+    const whiteSquare = useRef()
+    const mockUpContainer = useRef()
 
-    const nextProject = createRef()
+    const nextProject = useRef()
 
     useLayoutEffect(() => {
 
@@ -199,7 +198,7 @@ const HookahPage = () => {
                         nextProject.current.style.display = 'flex'
                     },
                     // onLeaveBack: () => console.log('leave back'),
-                    markers: true
+                    // markers: true
                 }
             })
 

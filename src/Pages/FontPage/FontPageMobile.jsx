@@ -1,8 +1,12 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import cl from './FontPageMobile.module.css'
 
 const FontPageMobile = () => {
     const navigate = useNavigate()
+
+    useEffect(() => window.scrollTo(0, 0), [])
+
     return (
         <div className={cl.container}>
             <header className={cl.welcomeSection}>

@@ -1,14 +1,13 @@
-import { useLayoutEffect, useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import cl from './HookahCatalogPage.module.css'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/src/ScrollTrigger'
 import { useRef } from 'react'
-import { createRef } from 'react'
 
 const HookahCatalogPage = () => {
 
-    const secondSection = createRef()
+    const secondSection = useRef()
 
     useLayoutEffect(() => {
 
@@ -26,7 +25,7 @@ const HookahCatalogPage = () => {
                     end: '4000',
                     pin: true,
                     scrub: true,
-                    markers: true,
+                    // markers: true,
                     immediateRender: false
                 }
             })
