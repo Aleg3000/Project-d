@@ -1,0 +1,100 @@
+.aboutContainer {
+    width: 100vw;
+    height: calc(100vh + 1px);
+    /* background-color: #F2F2F2; */
+    background-color: #0F1010;
+    padding: 8rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    color: #0F1010;
+    /* transition: all 1s linear; */
+}
+
+.title {
+    font-family: 'Stolzl';
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 4.8rem;
+    font-style: normal;
+}
+
+.contactInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50.5rem;
+}
+
+.contactsContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: #525252;
+}
+
+.aboutInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50.5rem;
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: #525252;
+}
+
+.aboutInfoContainer > div > span {
+    color: #0F1010;
+}
+
+.projectsBtn {
+    position: absolute;
+    /* width: 7.2rem; */
+    /* height: 3rem; */
+    padding: 0 5rem;
+
+    left: 50vw;
+    transform: translateX(-50%);
+    bottom: 5rem;
+
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 3rem;
+
+    color: #979797;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .aboutContainer{
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: flex-start;
+    }
+
+    .contactInfoContainer{
+        gap: 4rem;
+        justify-content: flex-start;
+        height: auto;
+    }
+
+    .aboutInfoContainer {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+    }
+
+    .projectsBtn {
+        bottom: 10vh;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -94,7 +94,7 @@ const Carousel = ({className, children, main}) => {
                     },
                     keyframes: {
                         '0%': {width: a.style.width, height: a.style.height, top: a.style.top, left: a.style.left, borderRadius: '10px'},
-                        '50%': {width: '100vw', height: a.style.height, top: a.style.top, left: 0, borderRadius: '0px'},
+                        '50%': {width: '100vw', height: a.style.height, top: a.style.top, left: 0, borderRadius: '10px'},
                         '100%': {width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',}
                     }
                 })

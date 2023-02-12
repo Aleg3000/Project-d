@@ -1,17 +1,11 @@
 import gsap from 'gsap'
-import { createRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { MyContext } from '../../App';
 import Card from './Card/MainCard';
 import cl from './MainCards.module.css'
 
-const MainCards = () => {
-
-    const container = createRef()
+const MainCards = ({container}) => {
 
     const navigate = useNavigate()
-
-    // const [context, setContext] = useContext(MyContext);
 
     const colors = ['#C6C6C6', '#0D2805', '#7FA7A8', '#E5291F', '#46442D']
 
@@ -60,22 +54,14 @@ const MainCards = () => {
             const title = a.firstChild
             const { dataset: { page } } = e.currentTarget
 
-            console.log(page)
-
-            console.log(a)
-
             gsap.to(title, { fontSize: '8rem', lineHeight: '8rem', opacity: 1 })
             gsap.to(a, { width: '100vw', height: '100vh', top: '0', left: '0', fontSize: '2.5rem',
                 borderRadius: '0',
                 duration: 0.5,
                 onComplete: () => {
-                // setContext({isProject: true, currentPage: page})
-
-                navigate(page)
-
-                document.body.style.overflow = 'auto'
-                setTimeout(() => a.remove(), 0);
-            }
+                    navigate(page)
+                    a.remove()
+                }
             })
 
     }

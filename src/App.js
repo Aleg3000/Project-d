@@ -7,6 +7,7 @@ import FontPage from './Pages/FontPage/FontPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HookahCatalogPage from './Pages/HookahCatalogPage/HookahCatalogPage';
 import FontPageMobile from './Pages/FontPage/FontPageMobile';
+import AboutPage from './Pages/AboutPage/AboutPage';
 
 function App() {
 
@@ -33,6 +34,10 @@ function App() {
       path: '/audi',
       element: <AudiPage />
     },
+    {
+      path: '/about',
+      element: <AboutPage />
+    },
   ],
   { basename: "/Project-d" });
 
@@ -56,6 +61,10 @@ function App() {
     {
       path: '/audi',
       element: <AudiPage />
+    },
+    {
+      path: '/about',
+      element: <AboutPage />
     },
   ],
   { basename: "/Project-d" });
