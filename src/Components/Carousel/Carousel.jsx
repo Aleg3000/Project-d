@@ -2,6 +2,7 @@ import { useState, useLayoutEffect, useEffect } from 'react';
 import gsap from 'gsap'
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
+import cardData from '../../Pages/cardsData';
 
 let currentCard = 0
 
@@ -9,7 +10,9 @@ const Carousel = ({className, children, main}) => {
 
     const navigate = useNavigate()
 
-    const colors = ['#C6C6C6', '#0D2805', '#7FA7A8', '#E5291F', '#46442D']
+    // const colors = ['#C6C6C6', '#0D2805', '#7FA7A8', '#E5291F', '#46442D']
+
+    const [colors, setColors] = useState([])
 
     const cont = useRef();
 
@@ -88,6 +91,7 @@ const Carousel = ({className, children, main}) => {
                     // width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',
                     duration: 2,
                     onComplete: () => {
+                        console.log(page)
                         navigate(page)
                         document.querySelector('meta[name="theme-color"]').setAttribute("content", '#0F1010');
                         setTimeout(() => a.remove(), 0);
@@ -170,6 +174,8 @@ const Carousel = ({className, children, main}) => {
         // можно это оставить в лэйауте, а остальное в обычном, как варик
         cont.current.style.width = `${children.length * 100}vw`
 
+        setColors(cardData.map(card => card.color))
+
     }, [])
 
     useEffect(() => {
@@ -178,7 +184,7 @@ const Carousel = ({className, children, main}) => {
         document.querySelector('meta[name="theme-color"]').setAttribute("content", colors[currentCard]);
 
         if (main.current) main.current.style.backgroundColor = colors[currentCard]
-    }, [])
+    }, [colors])
 
     useEffect(update, [isUpdated])
 

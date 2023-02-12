@@ -2,29 +2,18 @@ import gsap from 'gsap'
 import { useNavigate } from 'react-router-dom';
 import Card from './Card/MainCard';
 import cl from './MainCards.module.css'
+import cardData from '../../Pages/cardsData';
 
 const MainCards = ({container}) => {
 
     const navigate = useNavigate()
 
-    const colors = ['#C6C6C6', '#0D2805', '#7FA7A8', '#E5291F', '#46442D']
-
-    const cards = [
-        'UNION HOOKAH, Catalog',
-        'UNION HOOKAH, Branding',
-        '3D LETTERING, Lettering',
-        'AUDI QUATTRO DAYS, Key visual',
-        'OUCE, Type',
-    ]
-
-    const dataSet = ['hookahCatalog', 'hookahBrand', 'threeD', 'audi', 'font']
-
-    function slideCard(mode, card, i, e) {
+    function slideCard(mode, card, i, e, color) {
         const title = card.firstChild
         const translate = 27.25; /* rem */
         
         if (mode === 'open') {
-            gsap.to('main', {backgroundColor: colors[i], duration: 1})
+            gsap.to('main', {backgroundColor: color, duration: 1})
             // to fix
             gsap.to(title, {opacity: 1, duration: 1, delay: 0.3 })
             gsap.to(card, {width: '70rem', opacity: 1, ease: "expo.out", duration: 1})
@@ -63,20 +52,12 @@ const MainCards = ({container}) => {
                     a.remove()
                 }
             })
-
     }
-
-    
 
     return (
         <div className={cl.mainContainer} ref={container}>
-            {cards.map((card, i) => <Card 
-                                        dataSet={dataSet[i]}
-                                        open={openCard}
-                                        slide={slideCard} 
-                                        title={card} 
-                                        index={i} 
-                                        key={i+card[0]} 
+            {cardData
+                .map((card, i) => <Card open={openCard} slide={slideCard} cardInfo={card} index={i} key={i} 
                                     />)}
         </div>
     )

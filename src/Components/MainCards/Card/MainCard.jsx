@@ -1,17 +1,16 @@
 import cl from './MainCard.module.css'
 
-const MainСard = ({title, index, slide: slideCard, open, dataSet}) => {
+const MainСard = ({cardInfo: {dataset, title, category, className, color}, index, slide: slideCard, open}) => {
 
     return (
         <div 
-            onMouseEnter={(e) => slideCard.call(null, 'open', e.currentTarget, index, e)} 
-            onMouseLeave={(e) => slideCard.call(null, 'close', e.currentTarget, index, e)}
+            onMouseEnter={(e) => slideCard.call(null, 'open', e.currentTarget, index, e, color)} 
+            onMouseLeave={(e) => slideCard.call(null, 'close', e.currentTarget, index, e, color)}
             onClick={open} 
-            className={[cl.card, cl[`card${index + 1}`]].join(' ')}
-            data-page={dataSet}
+            className={[cl.card, cl[className]].join(' ')}
+            data-page={dataset}
         >
-            <h2>{title.split(',')[0]},<span>{title.split(',')[1]}</span></h2>
-            {/* <h2>{title}</h2> */}
+            <h2>{title},<span> {category}</span></h2>
         </div>
     )
 }

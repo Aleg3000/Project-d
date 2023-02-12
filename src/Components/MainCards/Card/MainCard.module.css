@@ -14,28 +14,28 @@
     font-size: 1rem;
 }
 
-.card1 {
+.hookahCatalogCard {
     background-image: url(../../../assets/union-hookah-catalog/title.png);
 }
 
-.card2 {
+.hookahBrandCard {
     position: relative;
     background-color: #30BA09;
 }
 
-.card3 {
+.threeDCard {
     background-image: url(../../../assets/3d.png);
 }
 
-.card4 {
+.audiCard {
     background-image: url(../../../assets/audi/title.png);
 }
 
-.card5 {
+.fontCard {
     background-image: url(../../../assets/font/title.png);
 }
 
-.card2::after {
+.hookahBrandCard::after {
     content: '';
     position: absolute;
     top: 50%;
