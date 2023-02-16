@@ -12,6 +12,7 @@
 /* // сделать на гридах, add minmax */
 
 .title {
+    opacity: 0;
     text-align: center;
     line-height: 20vh;
     font-family: 'Stolzl';
@@ -30,11 +31,13 @@
     font-weight: 400;
     font-size: 2rem;
     color: #979797;
+    opacity: 0;
 }
 
 .cardVisibleContainer {
     /* position: absolute;
     top: 20vh; */
+    opacity: 0;
     overflow: hidden;
 }
 

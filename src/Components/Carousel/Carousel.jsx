@@ -10,7 +10,7 @@ const Carousel = ({className, children, main}) => {
 
     const navigate = useNavigate()
 
-    // const colors = ['#C6C6C6', '#0D2805', '#7FA7A8', '#E5291F', '#46442D']
+    // const colors = ['#C6C6C6', '#0D2805', '#E5291F', '#46442D']
 
     const [colors, setColors] = useState([])
 
@@ -24,6 +24,42 @@ const Carousel = ({className, children, main}) => {
     const [touches, setTouches] = useState([])
 
     const [anchors, setAnchors] = useState([])
+
+    function openCard(e) {
+        const a = e.target.cloneNode(true)
+        a.style.position = 'absolute'
+        const { top, left, height} = e.target.getBoundingClientRect()
+        a.style.top = top + 'px'
+        a.style.left = left + 'px'
+        a.style.height = height + 'px'
+        document.body.appendChild(a)
+
+        gsap.to(e.target, {
+            margin: '0 15px',
+            duration: 1})
+        gsap.to(cont.current, {
+            padding: '0 15px',
+            duration: 1
+        })
+
+        const { dataset: { page } } = e.target
+
+        gsap.to(a, { 
+            delay: 1,
+            duration: 2,
+            onComplete: () => {
+                console.log(page)
+                navigate(page)
+                document.querySelector('meta[name="theme-color"]').setAttribute("content", '#0F1010');
+                setTimeout(() => a.remove(), 0);
+            },
+            keyframes: {
+                '0%': {width: a.style.width, height: a.style.height, top: a.style.top, left: a.style.left, borderRadius: '10px'},
+                '50%': {width: '100vw', height: a.style.height, top: a.style.top, left: 0, borderRadius: '10px'},
+                '100%': {width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',}
+            }
+        })
+}
 
     // const getVelocity = (touches) => {
     //     if (touches.length < 2) return
@@ -77,32 +113,6 @@ const Carousel = ({className, children, main}) => {
         setTouches([])
 
         if (velocity === undefined) {
-            function openCard(e) {
-                const a = e.target.cloneNode(true)
-                a.style.position = 'absolute'
-                a.style.top = e.target.getBoundingClientRect().top + 'px'
-                a.style.left = e.target.getBoundingClientRect().left + 'px'
-                a.style.height = e.target.getBoundingClientRect().height + 'px'
-                document.body.appendChild(a)
-
-                const { dataset: { page } } = e.target
-
-                gsap.to(a, { 
-                    // width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',
-                    duration: 2,
-                    onComplete: () => {
-                        console.log(page)
-                        navigate(page)
-                        document.querySelector('meta[name="theme-color"]').setAttribute("content", '#0F1010');
-                        setTimeout(() => a.remove(), 0);
-                    },
-                    keyframes: {
-                        '0%': {width: a.style.width, height: a.style.height, top: a.style.top, left: a.style.left, borderRadius: '10px'},
-                        '50%': {width: '100vw', height: a.style.height, top: a.style.top, left: 0, borderRadius: '10px'},
-                        '100%': {width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',}
-                    }
-                })
-        }
             // здесь можно открывать проект
 
             openCard(e)
@@ -176,7 +186,7 @@ const Carousel = ({className, children, main}) => {
 
         setColors(cardData.map(card => card.color))
 
-    }, [])
+    }, [children.length])
 
     useEffect(() => {
         // setting new theme

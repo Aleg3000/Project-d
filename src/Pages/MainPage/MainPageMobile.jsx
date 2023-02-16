@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import cardData from '../../data/cardsData';
+import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 
 const MainPageMobile = () => {
     const main = useRef()
@@ -15,44 +16,45 @@ const MainPageMobile = () => {
 
     const navigate = useNavigate()
 
+    const transition = useCustomTransition(transitionDiv)
+
+    const toMain = () => {
+        transition().finally(() => navigate('/'))
+    }
+
     useEffect(() =>  {
+        gsap.registerPlugin()
         window.scrollTo(0, 0)
         document.body.style.overflowY = 'hidden'
+
+        const tl = gsap.timeline()
+
+        tl.to(cardsContainer.current, {opacity: 1, duration: 1, delay: 0.5})
+        tl.to(title.current, {opacity: 1})
+        tl.to(about.current, {opacity: 1})
 
         return () => document.body.style.overflowY = 'auto'
     }, [])
 
     const toAbout = () => {
-        title.current.style.opacity = 0
-        about.current.style.opacity = 0
-        
-        transitionDiv.current.style.display = 'block'
-        gsap.to(transitionDiv.current, {
-            yPercent: -100,
-            duration: 0.8,
-            onComplete: () => navigate('about')
-        })
-        gsap.to(cardsContainer.current, {
-            yPercent: -150,
-            duration: 0.8,
-            
-        })
+        transition().finally(() => navigate('/about'))
     }
     
     return (
-        <><main ref={main} className={cl.main}>
-            <div ref={title} className={cl.title}>Project-d</div>
-            <div ref={cardsContainer} className={cl.cardVisibleContainer}>
-                <Carousel main={main} className={cl.cardContainer}>
-                    {cardData.map((card, i) => <div key={i} data-page={card.dataset} className={[cl.card, cl[card.className]].join(' ')}>
-                        <h2>{card.title},<span> {card.category}</span></h2>
-                    </div>)}
-                </Carousel>
-            </div>
-            <div ref={about} onClick={toAbout} className={cl.aboutBtn}>About Us</div>
-        </main><div ref={transitionDiv} className={cl.transitionDiv}>
-            <div className={cl.test}></div>
-            </div></>
+        <>
+            <main ref={main} className={cl.main}>
+                <div ref={title} className={cl.title}>Project-d</div>
+                <div ref={cardsContainer} className={cl.cardVisibleContainer}>
+                    <Carousel main={main} className={cl.cardContainer}>
+                        {cardData.map((card, i) => <div key={i} data-page={card.dataset} className={[cl.card, cl[card.className]].join(' ')}>
+                            <h2>{card.title},<span> {card.category}</span></h2>
+                        </div>)}
+                    </Carousel>
+                </div>
+                <div ref={about} onClick={toAbout} className={cl.aboutBtn}>About Us</div>
+            </main>
+            <TransitionDiv color='#F2F2F2' ref={transitionDiv} />
+        </>
     )
 }
 

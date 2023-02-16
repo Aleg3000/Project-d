@@ -5,8 +5,11 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/src/ScrollTrigger'
 import { useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
+import { useMatchMedia } from '../../hooks/useMatchMedia'
 
 const HookahCatalogPage = () => {
+
+    const isMobile = useMatchMedia()
 
     const secondSection = useRef()
 
@@ -74,7 +77,7 @@ const HookahCatalogPage = () => {
              <footer className={cl.footer}>
                 <h2 onClick={() => navigate('/hookahBrand')}>NEXT PROJECT</h2>
             </footer>
-            <TransitionDiv ref={transitionDiv} />
+            <TransitionDiv color={isMobile ? '#C6C6C6' : '#0F1010'} ref={transitionDiv} />
         </div>
     )
 }

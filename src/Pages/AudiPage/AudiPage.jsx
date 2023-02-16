@@ -2,9 +2,12 @@ import cl from './AudiPage.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
+import { useMatchMedia } from '../../hooks/useMatchMedia'
 
 const AudiPage = () => {
     const navigate = useNavigate()
+
+    const isMobile = useMatchMedia()
 
     const transitionDiv = useRef()
 
@@ -31,7 +34,7 @@ const AudiPage = () => {
             <footer className={cl.footer}>
             <h2 onClick={() => navigate('/font')}>NEXT PROJECT</h2>
             </footer>
-            <TransitionDiv ref={transitionDiv} />
+            <TransitionDiv color={isMobile ? '#E5291F' : '#0F1010'} ref={transitionDiv} />
         </>
         
         

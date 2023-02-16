@@ -5,6 +5,7 @@ import { useLayoutEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
+import { useMatchMedia } from '../../hooks/useMatchMedia'
 
 
 const HookahPage = () => {
@@ -38,6 +39,8 @@ const HookahPage = () => {
     const transitionDiv = useRef()
 
     const transition = useCustomTransition(transitionDiv)
+
+    const { isMobile } = useMatchMedia();
 
     const toMain = () => {
         transition().finally(() => navigate('/'))
@@ -309,7 +312,7 @@ const HookahPage = () => {
             <div ref={nextProject} className={cl.nextProject}>
                 <div onClick={() => navigate('/audi')}>next project</div>
             </div>
-        </div><TransitionDiv ref={transitionDiv} /></>
+        </div><TransitionDiv color={isMobile ? '#0D2805' : '#0F1010'} ref={transitionDiv} /></>
     )
 }
 
