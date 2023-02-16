@@ -13,13 +13,13 @@ const cardData = [
         dataset: 'hookahBrand',
         className: 'hookahBrandCard',
     },
-    {
-        title: '3D LETTERING',
-        category: 'Lettering',
-        color: '#7FA7A8',
-        dataset: 'threeD',
-        className: 'threeDCard',
-    },
+    // {
+    //     title: '3D LETTERING',
+    //     category: 'Lettering',
+    //     color: '#7FA7A8',
+    //     dataset: 'threeD',
+    //     className: 'threeDCard',
+    // },
     {
         title: 'AUDI QUATTRO DAYS',
         category: 'Key visual',

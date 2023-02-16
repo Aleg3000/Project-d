@@ -3,7 +3,7 @@
     height: calc(100vh + 1px);
     background-color: #F2F2F2;
     /* background-color: #0F1010; */
-    padding: 8rem 5rem;
+    padding: 8rem 8.7rem 8rem 3.6rem;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
@@ -73,6 +73,20 @@
 
     color: #979797;
     cursor: pointer;
+}
+
+.skewDiv {
+    position: absolute;
+    /* background-color: #0F1010; */
+    background-color: pink;
+    width: 150vw;
+    height: 100vh;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-100%);
+    /* transform: skewY(0deg) translateX(-25%); */
+
+    /* transform: skewY(17deg) translate(-25%, -12%); */
 }
 
 @media (max-width: 767px) {

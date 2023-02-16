@@ -1,0 +1,28 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressContainer {
+    overflow: hidden;
+}
+
+.loading {
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8rem;
+    color: #0F1010;
+}
+
+.loading > div {
+    display: inline-block;
+}
+
+.imgContainer {
+    display: none;
+}

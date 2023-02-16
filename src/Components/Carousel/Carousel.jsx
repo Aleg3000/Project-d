@@ -2,7 +2,7 @@ import { useState, useLayoutEffect, useEffect } from 'react';
 import gsap from 'gsap'
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
-import cardData from '../../Pages/cardsData';
+import cardData from '../../data/cardsData';
 
 let currentCard = 0
 

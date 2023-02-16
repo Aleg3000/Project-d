@@ -1,16 +1,26 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import cl from './FontPage.module.css'
+import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
+
 
 const FontPage = () => {
     const navigate = useNavigate()
+
+    const transitionDiv = useRef()
+
+    const transition = useCustomTransition(transitionDiv)
+
+    const toMain = () => {
+        transition().finally(() => navigate('/'))
+    }
 
     useEffect(() => window.scrollTo(0, 0), [])
     
     return (
         <div className={cl.container}>
             <header className={cl.welcomeSection}>
-                <div onClick={() => navigate('/')} className={cl.titleBtn}>Project-d</div>
+                <div onClick={toMain} className={cl.titleBtn}>Project-d</div>
                 <h2>OUCE,<span> Type</span></h2>
                 <div className={cl.welcomeLogo}></div>
              </header>
@@ -33,6 +43,7 @@ const FontPage = () => {
              <footer className={cl.footer}>
                 <h2 onClick={() => navigate('/hookahCatalog')}>NEXT PROJECT</h2>
             </footer>
+            <TransitionDiv ref={transitionDiv} />
         </div>
     )
 }

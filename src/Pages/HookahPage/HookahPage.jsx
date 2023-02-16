@@ -4,6 +4,7 @@ import ScrollTrigger from 'gsap/src/ScrollTrigger'
 import { useLayoutEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
+import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 
 
 const HookahPage = () => {
@@ -33,6 +34,14 @@ const HookahPage = () => {
     const mockUpContainer = useRef()
 
     const nextProject = useRef()
+
+    const transitionDiv = useRef()
+
+    const transition = useCustomTransition(transitionDiv)
+
+    const toMain = () => {
+        transition().finally(() => navigate('/'))
+    }
 
     useLayoutEffect(() => {
 
@@ -258,50 +267,49 @@ const HookahPage = () => {
 
 
     return (
-        <div className={cl.content}>
-                    <div className={cl.welcomeSection}>
-                        <div onClick={() => navigate('/')} className={cl.titleBtn}>Project-d</div>
-                        <h2>UNION HOOKAH,<span> Branding</span></h2>
-                        <div className={cl.welcomeLogo}></div>
-                    </div>
-                    
-
-                    <div ref={firstBg} className={cl.unionFirstBg}></div>
-                    <div ref={firstFont} className={cl.unionFirstFont}></div>
-                    <div ref={overflowFont} className={cl.unionFirstTopFont}></div>
-                    <div ref={leftDudka} className={cl.leftDudka}></div>
-                    <div ref={rightDudka} className={cl.rightDudka}></div>
-
-                    <div ref={logoU} className={cl.logoU}></div>
-                    <div ref={logoNion} className={cl.logoNion}></div>
-                    <div ref={logoHookah} className={cl.logoHookah}></div>
-
-                    <div ref={bags} className={cl.bags}></div>
-                    <div ref={topMotionText} className={cl.topMotionText}></div>
-                    <div ref={centerMotionText} className={cl.centerMotionText}></div>
-
-
-                    <div ref={blackSquareContainer} className={cl.blackSquareContainer}>
-                        <div ref={blackSquare} className={cl.blackSquare}>
-                            <div style={{backgroundColor: '#fff'}} className={cl.logo}></div>
-                        </div>
-                        <div ref={sitePage} className={cl.sitePage}></div>
-                    </div>
-
-                    <div ref={whiteSquareContainer} className={cl.whiteSquareContainer}>
-                        <div ref={whiteSquare} className={cl.whiteSquare}>
-                            <div style={{backgroundColor: '#000'}} className={cl.logo}></div>
-                        </div>
-                        <div ref={mockUpContainer} className={cl.mockUpContainer}>
-                            <div className={cl.mockUpBook}></div>
-                        </div>
-                    </div>
-
-                    <div ref={nextProject} className={cl.nextProject}>
-                        <div onClick={() => navigate('/audi')}>next project</div>
-                    </div>
-                    
+        <><div className={cl.content}>
+            <div className={cl.welcomeSection}>
+                <div onClick={toMain} className={cl.titleBtn}>Project-d</div>
+                <h2>UNION HOOKAH,<span> Branding</span></h2>
+                <div className={cl.welcomeLogo}></div>
             </div>
+
+
+            <div ref={firstBg} className={cl.unionFirstBg}></div>
+            <div ref={firstFont} className={cl.unionFirstFont}></div>
+            <div ref={overflowFont} className={cl.unionFirstTopFont}></div>
+            <div ref={leftDudka} className={cl.leftDudka}></div>
+            <div ref={rightDudka} className={cl.rightDudka}></div>
+
+            <div ref={logoU} className={cl.logoU}></div>
+            <div ref={logoNion} className={cl.logoNion}></div>
+            <div ref={logoHookah} className={cl.logoHookah}></div>
+
+            <div ref={bags} className={cl.bags}></div>
+            <div ref={topMotionText} className={cl.topMotionText}></div>
+            <div ref={centerMotionText} className={cl.centerMotionText}></div>
+
+
+            <div ref={blackSquareContainer} className={cl.blackSquareContainer}>
+                <div ref={blackSquare} className={cl.blackSquare}>
+                    <div style={{ backgroundColor: '#fff' }} className={cl.logo}></div>
+                </div>
+                <div ref={sitePage} className={cl.sitePage}></div>
+            </div>
+
+            <div ref={whiteSquareContainer} className={cl.whiteSquareContainer}>
+                <div ref={whiteSquare} className={cl.whiteSquare}>
+                    <div style={{ backgroundColor: '#000' }} className={cl.logo}></div>
+                </div>
+                <div ref={mockUpContainer} className={cl.mockUpContainer}>
+                    <div className={cl.mockUpBook}></div>
+                </div>
+            </div>
+
+            <div ref={nextProject} className={cl.nextProject}>
+                <div onClick={() => navigate('/audi')}>next project</div>
+            </div>
+        </div><TransitionDiv ref={transitionDiv} /></>
     )
 }
 

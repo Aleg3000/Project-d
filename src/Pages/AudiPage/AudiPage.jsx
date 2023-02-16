@@ -1,9 +1,18 @@
 import cl from './AudiPage.module.css'
 import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 
 const AudiPage = () => {
     const navigate = useNavigate()
+
+    const transitionDiv = useRef()
+
+    const transition = useCustomTransition(transitionDiv)
+
+    const toMain = () => {
+        transition().finally(() => navigate('/'))
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -11,7 +20,7 @@ const AudiPage = () => {
     return (
         <>
             <header className={cl.welcomeSection}>
-                <div onClick={() => navigate('/')} className={cl.titleBtn}>Project-d</div>
+                <div onClick={toMain} className={cl.titleBtn}>Project-d</div>
                 <h2>AUDI QUATTRO DAYS,<span> Key visual</span></h2>
             </header>
             <main className={cl.main}>
@@ -22,6 +31,7 @@ const AudiPage = () => {
             <footer className={cl.footer}>
             <h2 onClick={() => navigate('/font')}>NEXT PROJECT</h2>
             </footer>
+            <TransitionDiv ref={transitionDiv} />
         </>
         
         

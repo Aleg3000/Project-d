@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
-import cardData from '../cardsData';
+import cardData from '../../data/cardsData';
 
 const MainPageMobile = () => {
     const main = useRef()
@@ -50,7 +50,9 @@ const MainPageMobile = () => {
                 </Carousel>
             </div>
             <div ref={about} onClick={toAbout} className={cl.aboutBtn}>About Us</div>
-        </main><div ref={transitionDiv} className={cl.transitionDiv}></div></>
+        </main><div ref={transitionDiv} className={cl.transitionDiv}>
+            <div className={cl.test}></div>
+            </div></>
     )
 }
 

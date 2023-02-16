@@ -4,10 +4,20 @@ import cl from './HookahCatalogPage.module.css'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/src/ScrollTrigger'
 import { useRef } from 'react'
+import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 
 const HookahCatalogPage = () => {
 
     const secondSection = useRef()
+
+    const transitionDiv = useRef()
+
+    const transition = useCustomTransition(transitionDiv)
+
+    const toMain = () => {
+        transition().finally(() => navigate('/'))
+    }
+
 
     useLayoutEffect(() => {
 
@@ -38,7 +48,7 @@ const HookahCatalogPage = () => {
     return (
         <div className={cl.container}>
             <header className={cl.welcomeSection}>
-                <div onClick={() => navigate('/')} className={cl.titleBtn}>Project-d</div>
+                <div onClick={toMain} className={cl.titleBtn}>Project-d</div>
                 <h2>UNION HOOKAH,<span> Catalog</span></h2>
                 <div className={cl.welcomeLogo}></div>
              </header>
@@ -64,6 +74,7 @@ const HookahCatalogPage = () => {
              <footer className={cl.footer}>
                 <h2 onClick={() => navigate('/hookahBrand')}>NEXT PROJECT</h2>
             </footer>
+            <TransitionDiv ref={transitionDiv} />
         </div>
     )
 }

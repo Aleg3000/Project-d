@@ -2,7 +2,7 @@ import gsap from 'gsap'
 import { useNavigate } from 'react-router-dom';
 import Card from './Card/MainCard';
 import cl from './MainCards.module.css'
-import cardData from '../../Pages/cardsData';
+import cardData from '../../data/cardsData';
 
 const MainCards = ({container}) => {
 
@@ -17,20 +17,20 @@ const MainCards = ({container}) => {
             // to fix
             gsap.to(title, {opacity: 1, duration: 1, delay: 0.3 })
             gsap.to(card, {width: '70rem', opacity: 1, ease: "expo.out", duration: 1})
-            if (i !== 2) {
-                gsap.to(container.current, {
-                    transform: `translateX(${i < 2 ? translate : - translate}rem)`,
-                    ease: "expo.out",
-                    duration: 1,
-                })
-            }
+            // if (i !== 2) {
+            //     gsap.to(container.current, {
+            //         transform: `translateX(${i < 2 ? translate : - translate}rem)`,
+            //         ease: "expo.out",
+            //         duration: 1,
+            //     })
+            // }
         } else {
             gsap.to(card, {width: '15.5rem', opacity: 1, ease: "expo.out", duration: 1})
             gsap.to('main', {backgroundColor: '#0F1010', duration: 1})
             // to fix
             gsap.to(title, {opacity: 0, duration: 0.1, overwrite: true})
-            if (i === 2) return;
-            gsap.to(container.current, {transform: 'translateX(0)', ease: "expo.out", duration: 1})
+            // if (i === 2) return;
+            // gsap.to(container.current, {transform: 'translateX(0)', ease: "expo.out", duration: 1})
         }
     }
 

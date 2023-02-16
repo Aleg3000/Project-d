@@ -55,3 +55,13 @@ a {
   color: inherit;
 }
 
+.transitionDiv {
+  display: none;
+  z-index: 99;
+  position: absolute;
+  width: 150vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
