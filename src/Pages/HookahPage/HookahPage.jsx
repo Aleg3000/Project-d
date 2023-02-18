@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 import { useMatchMedia } from '../../hooks/useMatchMedia'
+import { useTransitionNext } from '../../hooks/useTransitionNext'
 
 
 const HookahPage = () => {
@@ -40,6 +41,9 @@ const HookahPage = () => {
 
     const transition = useCustomTransition(transitionDiv)
 
+    const [nextProjectEl, toNextProject] = useTransitionNext('audi')
+
+
     const { isMobile } = useMatchMedia();
 
     const toMain = () => {
@@ -70,6 +74,7 @@ const HookahPage = () => {
                     start: "top 200px",
                     end: "+=800",
                     pin: true,
+                    markers: true,
                     immediateRender: false /*  i should read about it, its prevents jumps using fast scroll */
                 }
             })
@@ -85,6 +90,7 @@ const HookahPage = () => {
                     pin: true
                 }
             })
+            
 
             gsap.from(logoU.current, {
                 x: function(index, target, targets) { 
@@ -272,46 +278,56 @@ const HookahPage = () => {
     return (
         <><div className={cl.content}>
             <div className={cl.welcomeSection}>
-                <div onClick={toMain} className={cl.titleBtn}>Project-d</div>
+            <div onClick={toMain} className='titleBtn'><p>Project-d</p></div>
                 <h2>UNION HOOKAH,<span> Branding</span></h2>
                 <div className={cl.welcomeLogo}></div>
             </div>
 
+            <section className={cl.section1}>
+                <div ref={firstBg} className={cl.unionFirstBg}></div>
+                <div ref={firstFont} className={cl.unionFirstFont}></div>
+                <div ref={overflowFont} className={cl.unionFirstTopFont}></div>
+                <div ref={leftDudka} className={cl.leftDudka}></div>
+                <div ref={rightDudka} className={cl.rightDudka}></div>
+            </section>
+            
+            <section className={cl.section2}>
+                <div ref={logoU} className={cl.logoU}></div>
+                <div ref={logoNion} className={cl.logoNion}></div>
+                <div ref={logoHookah} className={cl.logoHookah}></div>
+            </section>
 
-            <div ref={firstBg} className={cl.unionFirstBg}></div>
-            <div ref={firstFont} className={cl.unionFirstFont}></div>
-            <div ref={overflowFont} className={cl.unionFirstTopFont}></div>
-            <div ref={leftDudka} className={cl.leftDudka}></div>
-            <div ref={rightDudka} className={cl.rightDudka}></div>
-
-            <div ref={logoU} className={cl.logoU}></div>
-            <div ref={logoNion} className={cl.logoNion}></div>
-            <div ref={logoHookah} className={cl.logoHookah}></div>
-
-            <div ref={bags} className={cl.bags}></div>
-            <div ref={topMotionText} className={cl.topMotionText}></div>
-            <div ref={centerMotionText} className={cl.centerMotionText}></div>
-
-
-            <div ref={blackSquareContainer} className={cl.blackSquareContainer}>
-                <div ref={blackSquare} className={cl.blackSquare}>
-                    <div style={{ backgroundColor: '#fff' }} className={cl.logo}></div>
+            <section className={cl.section3}>
+                <div ref={bags} className={cl.bags}></div>
+                <div ref={topMotionText} className={cl.topMotionText}></div>
+                <div ref={centerMotionText} className={cl.centerMotionText}></div>
+            </section>
+            
+            <section className={cl.section4}>
+                <div ref={blackSquareContainer} className={cl.blackSquareContainer}>
+                    <div ref={blackSquare} className={cl.blackSquare}>
+                        <div style={{ backgroundColor: '#fff' }} className={cl.logo}></div>
+                    </div>
+                    <div ref={sitePage} className={cl.sitePage}></div>
                 </div>
-                <div ref={sitePage} className={cl.sitePage}></div>
-            </div>
-
-            <div ref={whiteSquareContainer} className={cl.whiteSquareContainer}>
-                <div ref={whiteSquare} className={cl.whiteSquare}>
-                    <div style={{ backgroundColor: '#000' }} className={cl.logo}></div>
+            </section>
+        
+            <section className={cl.section5}>
+                <div ref={whiteSquareContainer} className={cl.whiteSquareContainer}>
+                    <div ref={whiteSquare} className={cl.whiteSquare}>
+                        <div style={{ backgroundColor: '#000' }} className={cl.logo}></div>
+                    </div>
+                    <div ref={mockUpContainer} className={cl.mockUpContainer}>
+                        <div className={cl.mockUpBook}></div>
+                    </div>
                 </div>
-                <div ref={mockUpContainer} className={cl.mockUpContainer}>
-                    <div className={cl.mockUpBook}></div>
-                </div>
-            </div>
+            </section>
+            
 
             <div ref={nextProject} className={cl.nextProject}>
-                <div onClick={() => navigate('/audi')}>next project</div>
+                <h2 className='nextProjectBtn' onClick={toNextProject}><p>NEXT PROJECT</p></h2>
             </div>
+        {nextProjectEl}
         </div><TransitionDiv color={isMobile ? '#0D2805' : '#0F1010'} ref={transitionDiv} /></>
     )
 }
