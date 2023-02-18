@@ -6,16 +6,19 @@ import ScrollTrigger from 'gsap/src/ScrollTrigger'
 import { useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 import { useMatchMedia } from '../../hooks/useMatchMedia'
+import { useTransitionNext } from '../../hooks/useTransitionNext'
 
 const HookahCatalogPage = () => {
-
-    const isMobile = useMatchMedia()
 
     const secondSection = useRef()
 
     const transitionDiv = useRef()
 
     const transition = useCustomTransition(transitionDiv)
+
+    const { isMobile } = useMatchMedia()
+
+    const [nextProject, toNextProject] = useTransitionNext('hookahBrand')
 
     const toMain = () => {
         transition().finally(() => navigate('/'))
@@ -48,10 +51,11 @@ const HookahCatalogPage = () => {
     }, [secondSection])
 
     const navigate = useNavigate()
+
     return (
         <div className={cl.container}>
             <header className={cl.welcomeSection}>
-                <div onClick={toMain} className={cl.titleBtn}>Project-d</div>
+            <div onClick={toMain} className='titleBtn'><p>Project-d</p></div>
                 <h2>UNION HOOKAH,<span> Catalog</span></h2>
                 <div className={cl.welcomeLogo}></div>
              </header>
@@ -74,9 +78,10 @@ const HookahCatalogPage = () => {
                 <div></div>
              </section>
 
-             <footer className={cl.footer}>
-                <h2 onClick={() => navigate('/hookahBrand')}>NEXT PROJECT</h2>
+            <footer className={cl.footer}>
+                <h2 className='nextProjectBtn' onClick={toNextProject}><p>NEXT PROJECT</p></h2>
             </footer>
+            {nextProject}
             <TransitionDiv color={isMobile ? '#C6C6C6' : '#0F1010'} ref={transitionDiv} />
         </div>
     )

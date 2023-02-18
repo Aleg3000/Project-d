@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 import { useMatchMedia } from '../../hooks/useMatchMedia'
+import { useTransitionNext } from '../../hooks/useTransitionNext'
 
 const AudiPage = () => {
     const navigate = useNavigate()
 
-    const isMobile = useMatchMedia()
+    const { isMobile } = useMatchMedia()
 
     const transitionDiv = useRef()
 
@@ -20,10 +21,13 @@ const AudiPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
+    const [nextProject, toNextProject] = useTransitionNext('font')
+
     return (
-        <>
+        <div className={cl.container}>
             <header className={cl.welcomeSection}>
-                <div onClick={toMain} className={cl.titleBtn}>Project-d</div>
+                <div onClick={toMain} className='titleBtn'><p>Project-d</p></div>
                 <h2>AUDI QUATTRO DAYS,<span> Key visual</span></h2>
             </header>
             <main className={cl.main}>
@@ -32,10 +36,11 @@ const AudiPage = () => {
                 <div className={cl.audi3}></div>
             </main>
             <footer className={cl.footer}>
-            <h2 onClick={() => navigate('/font')}>NEXT PROJECT</h2>
+            <h2 className='nextProjectBtn' onClick={toNextProject}><p>NEXT PROJECT</p></h2>
             </footer>
+            {nextProject}
             <TransitionDiv color={isMobile ? '#E5291F' : '#0F1010'} ref={transitionDiv} />
-        </>
+        </div>
         
         
     )

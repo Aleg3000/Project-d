@@ -45,19 +45,23 @@ const Carousel = ({className, children, main}) => {
         const { dataset: { page } } = e.target
 
         gsap.to(a, { 
-            delay: 1,
+            delay: 0.5,
             duration: 2,
             onComplete: () => {
                 console.log(page)
                 navigate(page)
                 document.querySelector('meta[name="theme-color"]').setAttribute("content", '#0F1010');
+                // можно менять при скролле на странице
                 setTimeout(() => a.remove(), 0);
             },
             keyframes: {
                 '0%': {width: a.style.width, height: a.style.height, top: a.style.top, left: a.style.left, borderRadius: '10px'},
                 '50%': {width: '100vw', height: a.style.height, top: a.style.top, left: 0, borderRadius: '10px'},
-                '100%': {width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',}
-            }
+                '100%': {width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',},
+                ease: 'power1.out',
+                easeEach: 'none',
+                // hmmmmmm why font behave so weird
+            },
         })
 }
 
@@ -174,6 +178,7 @@ const Carousel = ({className, children, main}) => {
     const [isUpdated, setIsUpdated] = useState(false)
 
     useLayoutEffect(() => {
+        gsap.registerPlugin()
         window.addEventListener('resize', () => setIsUpdated((state) => !state))
 
         // document.body.style.overflow = 'hidden'

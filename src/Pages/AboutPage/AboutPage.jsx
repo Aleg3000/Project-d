@@ -23,10 +23,9 @@ const AboutPage = () => {
     useEffect(() => {
         // window.scrollTo(0,1)
         document.body.style.overflowY = 'hidden'
-        console.log(window.scrollY)
+        // console.log(window.scrollY)
         const ctx = gsap.context(() => {
             const tl = gsap.timeline()
-            // tl.to(container.current, { backgroundColor: '#F2F2F2', duration: 1, ease: 'linear'})
             tl.from(title.current, {
                 opacity: 0,
                 xPercent: 100,
@@ -36,7 +35,9 @@ const AboutPage = () => {
             tl.to(second.current, {opacity: 1, duration: 1})
             tl.to(third.current, {opacity: 1, duration: 1})
             tl.to(fourth.current, {opacity: 1, duration: 1})
-            tl.to(fifth.current, {opacity: 1, duration: 1})
+            tl.to(fifth.current, {opacity: 1, duration: 1, onComplete: () => {
+                sixth.current.style.display = 'block'
+            }})
             tl.to(sixth.current, {opacity: 1, duration: 1})
         })
         
@@ -79,7 +80,7 @@ const AboutPage = () => {
                         Курируют отрасль , Доценты Высшей Школы Экономики
                     </div>
                 </div>
-                <div ref={sixth} style={{ opacity: 0 }} className={cl.projectsBtn} onClick={toMain}>Projects</div>
+                <div ref={sixth} style={{ opacity: 0, display: "none" }} className={cl.projectsBtn} onClick={toMain}>Projects</div>
             </main>
             <TransitionDiv ref={transitionDiv} />
         </>

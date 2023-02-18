@@ -35,7 +35,8 @@ const Loader = ({setIsLoading}) => {
                         y: 0,
                         duration: 0.5,
                         onComplete: () => {
-                            transition().finally(() => setIsLoading(false))
+                            setTimeout(() => transition().finally(() => setIsLoading(false)), 1500)
+                            
                             
                         }
                     })

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import cl from './FontPageMobile.module.css'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
+import { useTransitionNext } from '../../hooks/useTransitionNext'
 
 
 const FontPageMobile = () => {
@@ -14,6 +15,8 @@ const FontPageMobile = () => {
     const toMain = () => {
         transition().finally(() => navigate('/'))
     }
+
+    const [nextProject, toNextProject] = useTransitionNext('hookahCatalog')
 
     useEffect(() => window.scrollTo(0, 0), [])
 
@@ -49,8 +52,9 @@ const FontPageMobile = () => {
             </main>
 
             <footer className={cl.footer}>
-                <h2 onClick={() => navigate('/hookahCatalog')}>NEXT PROJECT</h2>
+                <h2 onClick={toNextProject}>NEXT PROJECT</h2>
             </footer>
+            {nextProject}
         </div><TransitionDiv color='#46442D' ref={transitionDiv} /></>
     )
 }

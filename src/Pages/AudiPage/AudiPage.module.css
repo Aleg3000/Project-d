@@ -1,3 +1,6 @@
+.container {
+    background-color: #0F1010;
+}
 
 .welcomeSection {
     width: 100vw;
@@ -28,15 +31,33 @@
     line-height: 1;
 }
 
-.titleBtn {
+/* .titleBtn {
     position: absolute;
     top: 10rem;
+    padding: 0 5rem;
     font-size: 2rem;
-    line-height: 2.4rem;
+    line-height: 3rem;
     font-family: 'Stolzl', sans-serif;
     color: #fff;
     cursor: pointer;
 }
+
+.titleBtn > p {
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.titleBtn:hover > p {
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+@keyframes bounce {
+    0%   { transform: translateY(0); opacity: 1;}
+    50%  { transform: translateY(-1.5rem); opacity: 0; }
+    51%  { transform: translateY(1.5rem); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+} */
 
 .main {
     background-color: #0F1010;
@@ -93,6 +114,13 @@
     font-size: 8rem;
     line-height: 8rem;
     cursor: pointer;
+}
+
+.nextProjectTitle {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
 }
 
 @media(max-width: 767px) {

@@ -57,8 +57,6 @@
 
 .projectsBtn {
     position: absolute;
-    /* width: 7.2rem; */
-    /* height: 3rem; */
     padding: 0 5rem;
 
     left: 50vw;
@@ -73,6 +71,20 @@
 
     color: #979797;
     cursor: pointer;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.projectsBtn:hover {
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+@keyframes bounce {
+    0%   { transform: translate(-50%, 0); opacity: 1;}
+    50%  { transform: translate(-50%, -1rem); opacity: 0; padding-bottom: 1rem; bottom: 4rem; }
+    51%  { transform: translate(-50%, 1rem); opacity: 0; padding-bottom: 0; padding-top: 1rem; bottom: 5rem;}
+    100% { transform: translate(-50%, 0); opacity: 1; padding: 0 5rem; }
 }
 
 .skewDiv {
