@@ -65,3 +65,51 @@ a {
   left: 0;
   transform: translateY(100%);
 }
+
+.titleBtn {
+  position: absolute;
+  top: 10rem;
+  padding: 0 5rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-family: 'Stolzl', sans-serif;
+  color: #fff;
+  cursor: pointer;
+  /* animation-duration: 0.5s;
+  animation-iteration-count: 1; */
+}
+
+.titleBtn > p {
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.titleBtn:hover > p {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); opacity: 1;}
+  50%  { transform: translateY(-3rem); opacity: 0; }
+  51%  { transform: translateY(3rem); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.nextProjectBtn {
+  font-family: 'Stolzl', sans-serif;
+  font-size: 8rem;
+  line-height: 8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nextProjectBtn > p {
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.nextProjectBtn:hover > p {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
