@@ -29,10 +29,12 @@ const Loader = ({setIsLoading}) => {
                 setPercents('done')
                 gsap.fromTo(a.current,
                     {
-                        y: 100
+                        yPercent: 100,
+                        opacity: 0,
                     },
                     {
-                        y: 0,
+                        yPercent: 0,
+                        opacity: 1,
                         duration: 0.5,
                         onComplete: () => {
                             setTimeout(() => transition().finally(() => setIsLoading(false)), 1500)
@@ -56,7 +58,7 @@ const Loader = ({setIsLoading}) => {
             <div ref={container} className={cl.container}>
                 <div className={cl.progressContainer}>
                     <div ref={progress} className={cl.loading}>
-                        Project—
+                        <div>Project—</div>
                         <div ref={a}>{percents}</div>
                     </div>
                 </div>
