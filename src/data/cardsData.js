@@ -1,13 +1,21 @@
+import audiTitle from '../assets/audi/title.png'
+import fontTitle from '../assets/font/title.png'
+import fontTitleMobile from '../assets/font/title-mobile.png'
+import hookahCatalogTitle from '../assets/union-hookah-catalog/title.png'
+
 const cardData = [
     {
-        title: 'UNION HOOKAH',
+        title: 'UNION HOOKAH,',
+        pathname: '/hookahCatalog',
         category: 'Catalog',
         color: '#C6C6C6',
         dataset: 'hookahCatalog',
         className: 'hookahCatalogCard',
+        backgroundImage: hookahCatalogTitle
     },
     {
-        title: 'UNION HOOKAH',
+        title: 'UNION HOOKAH,',
+        pathname: '/hookahBrand',
         category: 'Branding',
         color: '#0D2805',
         dataset: 'hookahBrand',
@@ -21,18 +29,23 @@ const cardData = [
     //     className: 'threeDCard',
     // },
     {
-        title: 'AUDI QUATTRO DAYS',
+        pathname: '/audi',
+        title: 'AUDI QUATTRO DAYS,',
         category: 'Key visual',
         color: '#E5291F',
         dataset: 'audi',
         className: 'audiCard',
+        backgroundImage: audiTitle,
     },
     {
-        title: 'OUCE',
+        title: 'OUCE,',
+        pathname: '/font',
         category: 'Type',
         color: '#46442D',
         dataset: 'font',
         className: 'fontCard',
+        backgroundImage: fontTitle,
+        backgroundImageMobile: fontTitleMobile
     },
 ]
 
