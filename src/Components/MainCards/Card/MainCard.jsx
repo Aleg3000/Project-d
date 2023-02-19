@@ -1,4 +1,5 @@
 import cl from './MainCard.module.css'
+import { createSubtitle } from '../../../functions/functions';
 
 const MainСard = ({cardInfo: {dataset, title, category, className, color}, index, slide: slideCard, open}) => {
 
@@ -10,7 +11,10 @@ const MainСard = ({cardInfo: {dataset, title, category, className, color}, inde
             className={[cl.card, cl[className]].join(' ')}
             data-page={dataset}
         >
-            <h2>{title},<span> {category}</span></h2>
+            <h2>
+                    {createSubtitle(title, cl.firstSpan)}
+                    {createSubtitle(category, cl.secondSpan)}
+            </h2>
         </div>
     )
 }
