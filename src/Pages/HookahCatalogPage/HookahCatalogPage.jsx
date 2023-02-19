@@ -7,6 +7,7 @@ import { useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 import { useMatchMedia } from '../../hooks/useMatchMedia'
 import { useTransitionNext } from '../../hooks/useTransitionNext'
+import Welcome from '../../Components/Welcome/Welcome'
 
 const HookahCatalogPage = () => {
 
@@ -54,11 +55,7 @@ const HookahCatalogPage = () => {
 
     return (
         <div className={cl.container}>
-            <header className={cl.welcomeSection}>
-            <div onClick={toMain} className='titleBtn'><p>Project-d</p></div>
-                <h2>UNION HOOKAH,<span> Catalog</span></h2>
-                <div className={cl.welcomeLogo}></div>
-             </header>
+             <Welcome toMain={toMain} />
 
              <section className={cl.firstSection}>
                 <div></div>

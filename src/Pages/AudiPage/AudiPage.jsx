@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 import { useMatchMedia } from '../../hooks/useMatchMedia'
 import { useTransitionNext } from '../../hooks/useTransitionNext'
+import Welcome from '../../Components/Welcome/Welcome'
 
 const AudiPage = () => {
     const navigate = useNavigate()
@@ -26,10 +27,7 @@ const AudiPage = () => {
 
     return (
         <div className={cl.container}>
-            <header className={cl.welcomeSection}>
-                <div onClick={toMain} className='titleBtn'><p>Project-d</p></div>
-                <h2>AUDI QUATTRO DAYS,<span> Key visual</span></h2>
-            </header>
+            <Welcome toMain={toMain} />
             <main className={cl.main}>
                 <div className={cl.audi1}></div>
                 <div className={cl.audi2}></div>

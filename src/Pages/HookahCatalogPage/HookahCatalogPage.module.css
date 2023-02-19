@@ -85,19 +85,19 @@
 }
 
 .pageView:nth-child(1) {
-    background-image: url(../../assets/union-hookah-catalog/page1.png);
+    background-image: url(../../assets/union-hookah-catalog/page1.jpg);
 }
 
 .pageView:nth-child(2) {
-    background-image: url(../../assets/union-hookah-catalog/page2.png);
+    background-image: url(../../assets/union-hookah-catalog/page2.jpg);
 }
 
 .pageView:nth-child(3) {
-    background-image: url(../../assets/union-hookah-catalog/page3.png);
+    background-image: url(../../assets/union-hookah-catalog/page3.jpg);
 }
 
 .pageView:nth-child(4) {
-    background-image: url(../../assets/union-hookah-catalog/page4.png);
+    background-image: url(../../assets/union-hookah-catalog/page4.jpg);
 }
 
 .thirdSection {
@@ -188,7 +188,7 @@
     .pageView {
         width: 100vw;
         height: 100vh;
-        background-image: url(../../assets/union-hookah-catalog/page1.png);
+        background-image: url(../../assets/union-hookah-catalog/page1.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;

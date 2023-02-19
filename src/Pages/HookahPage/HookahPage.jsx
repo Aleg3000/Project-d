@@ -7,6 +7,7 @@ import { useRef } from 'react'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 import { useMatchMedia } from '../../hooks/useMatchMedia'
 import { useTransitionNext } from '../../hooks/useTransitionNext'
+import Welcome from '../../Components/Welcome/Welcome'
 
 
 const HookahPage = () => {
@@ -74,7 +75,7 @@ const HookahPage = () => {
                     start: "top 200px",
                     end: "+=800",
                     pin: true,
-                    markers: true,
+                    // markers: true,
                     immediateRender: false /*  i should read about it, its prevents jumps using fast scroll */
                 }
             })
@@ -277,11 +278,7 @@ const HookahPage = () => {
 
     return (
         <><div className={cl.content}>
-            <div className={cl.welcomeSection}>
-            <div onClick={toMain} className='titleBtn'><p>Project-d</p></div>
-                <h2>UNION HOOKAH,<span> Branding</span></h2>
-                <div className={cl.welcomeLogo}></div>
-            </div>
+            <Welcome toMain={toMain} />
 
             <section className={cl.section1}>
                 <div ref={firstBg} className={cl.unionFirstBg}></div>

@@ -22,14 +22,37 @@
     font-size: 8rem;
     line-height: 8rem;
     /* opacity: 0; */
+    overflow: hidden;
 }
 
-.welcomeSection > h2 > span {
+.firstSpan {
+    opacity: 1;
+    white-space: pre;
+    display: inline-block;
+    color: #fff;
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8rem;
+    line-height: 8rem;
+}
+
+.secondSpan {
+    white-space: pre;
+    position: relative;
+    display: inline-block;
     font-family: 'Apple Garamond CYR';
     text-transform: capitalize;
     font-size: 1em;
     line-height: 1;
 }
+
+/* .welcomeSection > h2 > span:last-child {
+    font-family: 'Apple Garamond CYR';
+    text-transform: capitalize;
+    font-size: 1em;
+    line-height: 1;
+} */
 
 /* .titleBtn {
     position: absolute;

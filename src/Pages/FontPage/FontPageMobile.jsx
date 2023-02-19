@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import cl from './FontPageMobile.module.css'
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
 import { useTransitionNext } from '../../hooks/useTransitionNext'
+import Welcome from '../../Components/Welcome/Welcome'
 
 
 const FontPageMobile = () => {
@@ -22,11 +23,7 @@ const FontPageMobile = () => {
 
     return (
         <><div className={cl.container}>
-            <header className={cl.welcomeSection}>
-                <div onClick={toMain} className={cl.titleBtn}>Project-d</div>
-                <h2>OUCE,<span> Type</span></h2>
-                <div className={cl.welcomeLogo}></div>
-            </header>
+            <Welcome toMain={toMain}/>
 
             <main>
                 <section className={cl.firstSection}>
