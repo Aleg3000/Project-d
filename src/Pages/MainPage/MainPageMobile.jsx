@@ -47,7 +47,7 @@ const MainPageMobile = () => {
                 <div ref={cardsContainer} className={cl.cardVisibleContainer}>
                     <Carousel main={main} className={cl.cardContainer}>
                         {cardData.map((card, i) => <div key={i} data-page={card.dataset} className={[cl.card, cl[card.className]].join(' ')}>
-                            <h2>{card.title},<span> {card.category}</span></h2>
+                            <h2>{card.title}<span> {card.category}</span></h2>
                         </div>)}
                     </Carousel>
                 </div>

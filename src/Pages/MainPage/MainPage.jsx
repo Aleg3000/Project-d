@@ -34,25 +34,12 @@ const MainPage = () => {
         transition().finally(() => navigate('about'))
     }
 
-    const aboutHover = () => {
-        // gsap.from(about.current, {
-        //     y: -30,
-        //     opacity: 0,
-        //     duration: 0.3,
-        //     ease: 'none',
-        //     onComplete: () => {
-        //         // about.current.style.opacity = 1;
-        //         // about.current.style.opacity = 1;
-        //     }
-        // })
-    }
-
     return (
         <>
             <main className={cl.main}>
                 <h1 ref={title} className={cl.mainTitle}>Project-d</h1>
                 <MainCards container={cardsContainer} />
-                <div ref={about} onMouseOver={aboutHover} onClick={toAbout} className={cl.aboutBtn}>About us</div>
+                <div ref={about} onClick={toAbout} className={cl.aboutBtn}>About us</div>
             </main>
             <TransitionDiv color='#F2F2F2' ref={transitionDiv} />
         </>

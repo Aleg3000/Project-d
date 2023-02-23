@@ -1,7 +1,7 @@
 import audiTitle from '../assets/audi/title.png'
 import fontTitle from '../assets/font/title.png'
 import fontTitleMobile from '../assets/font/title-mobile.png'
-import hookahCatalogTitle from '../assets/union-hookah-catalog/title.png'
+import hookahCatalogTitle from '../assets/union-hookah-catalog/title.jpg'
 // import hookahCatalogBranding from '../assets/union-hookah/title.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
