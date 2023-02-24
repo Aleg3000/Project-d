@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Project-d/static/css/main.8c6d46df.css",
-    "main.js": "/Project-d/static/js/main.186983d2.js",
+    "main.css": "/Project-d/static/css/main.ac62a275.css",
+    "main.js": "/Project-d/static/js/main.150a1d58.js",
     "static/js/787.56d79e91.chunk.js": "/Project-d/static/js/787.56d79e91.chunk.js",
     "static/media/background.jpg": "/Project-d/static/media/background.f687a4e0b66b4d1039d6.jpg",
-    "static/media/title.png": "/Project-d/static/media/title.87ae4ec0488b176f76c5.png",
+    "static/media/title.png": "/Project-d/static/media/title.0900db8ed340a8a52b5e.png",
     "static/media/3.png": "/Project-d/static/media/3.12d6333412d70c382f6b.png",
     "static/media/bg.png": "/Project-d/static/media/bg.c904d02a200837db0dca.png",
     "static/media/alphabet.png": "/Project-d/static/media/alphabet.8cedf9dcfdf8a17d484b.png",
@@ -33,6 +33,7 @@
     "static/media/font3.jpg": "/Project-d/static/media/font3.5047d69141fe4af7ba1f.jpg",
     "static/media/final.jpg": "/Project-d/static/media/final.4e5d9ea94977f11faaa2.jpg",
     "static/media/center.png": "/Project-d/static/media/center.66d47e9dd1ec5556f180.png",
+    "static/media/title.jpg": "/Project-d/static/media/title.d0fb107c2aa93020bd8d.jpg",
     "static/media/applegaramondcyr_regular.ttf": "/Project-d/static/media/applegaramondcyr_regular.4bed0f57759f2b00ad36.ttf",
     "static/media/test.png": "/Project-d/static/media/test.c834178fa1285d442838.png",
     "static/media/final.png": "/Project-d/static/media/final.a9391648d3950eae3ec0.png",
@@ -50,12 +51,12 @@
     "static/media/logo.svg": "/Project-d/static/media/logo.ea20f4641742d85c1647.svg",
     "static/media/logo-main.svg": "/Project-d/static/media/logo-main.549900ef4a185a903d36.svg",
     "index.html": "/Project-d/index.html",
-    "main.8c6d46df.css.map": "/Project-d/static/css/main.8c6d46df.css.map",
-    "main.186983d2.js.map": "/Project-d/static/js/main.186983d2.js.map",
+    "main.ac62a275.css.map": "/Project-d/static/css/main.ac62a275.css.map",
+    "main.150a1d58.js.map": "/Project-d/static/js/main.150a1d58.js.map",
     "787.56d79e91.chunk.js.map": "/Project-d/static/js/787.56d79e91.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c6d46df.css",
-    "static/js/main.186983d2.js"
+    "static/css/main.ac62a275.css",
+    "static/js/main.150a1d58.js"
   ]
 }
