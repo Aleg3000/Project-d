@@ -1,9 +1,6 @@
 .content {
-    /* overflow: visible; */
     overflow-x: hidden;
     width: 100vw;
-    /* set a height because the contents are position: absolute, thus natively there's no height */
-    /* height: calc(100vw + 390rem + 800px + 5000px); */
     background-color: #0F1010;
     position: relative;
     scroll-behavior: smooth;
@@ -106,7 +103,6 @@
 .leftDudka {
     position: absolute;
     top: calc(23rem + 800px);
-    /* top: 23rem; */
     left: 10rem;
     width: 95.5rem;
     height: 112.7rem;
@@ -117,7 +113,6 @@
 .rightDudka {
     position: absolute;
     top: calc(23rem + 800px);
-    /* top: 23rem; */
     left: 10rem;
     width: 95.5rem;
     height: 112.7rem;
@@ -174,7 +169,6 @@
     width: 100vw;
     height: 112.5rem;
     position: absolute;
-    /* top: calc(100vh + 23rem + 800px + 112.7rem + 32rem + 36rem + 40rem); */
     top: 0;
     left: 0;
     background-image: url(../../assets/union-hookah/bags/bags.png);
@@ -187,7 +181,6 @@
     width: 232rem;
     height: 112.5rem;
     position: absolute;
-    /* top: calc(100vh + 23rem + 800px + 112.7rem + 32rem + 36rem + 40rem); */
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -206,7 +199,6 @@
     width: 232rem;
     height: 112.5rem;
     position: absolute;
-    /* top: calc(100vh + 23rem + 800px + 112.7rem + 32rem + 36rem + 40rem); */
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -218,7 +210,6 @@
 .blackSquareContainer {
     margin: 20rem 0;
     position: absolute;
-    /* top: calc(100vh + 23rem + 800px + 112.7rem + 32rem + 36rem + 40rem + 112.5rem); */
     top: 0;
     left: 0;
     width: 100vw;
@@ -267,7 +258,6 @@
     z-index: 2;
     margin: 40rem 0;
     position: absolute;
-    /* top: calc(100vh + 23rem + 800px + 112.7rem + 32rem + 36rem + 40rem + 112.5rem + 100vh + 1000px); */
     top: 0;
     left: 0;
     width: 100vw;
@@ -357,35 +347,30 @@
     }
     
     .unionFirstBg {
-        /* top: calc(100vh + 23rem); */
         left: 2.6rem;
         width: 37.6rem;
         height: 34.6rem;
     }
     
     .unionFirstFont {
-        /* top: calc(100vh + 23rem); */
         left: 2.6rem;
         width: 37.6rem;
         height: 34.6rem;
     }
     
     .unionFirstTopFont {
-        /* top: calc(100vh + 23rem); */
         left: 2.6rem;
         width: 37.6rem;
         height: 34.6rem;
     }
     
     .leftDudka {
-        /* top: calc(100vh + 23rem + 800px); */
         left: 2.6rem;
         width: 37.6rem;
         height: 44.5rem;
     }
     
     .rightDudka {
-        /* top: calc(100vh + 23rem + 800px); */
         left: 2.6rem;
         width: 37.6rem;
         height: 44.5rem;
@@ -394,28 +379,22 @@
     .logoU {
         width: 37.6rem;
         height: 14.1rem;
-        /* top: calc(100vh + 23rem + 800px + 44.5rem + 21rem); */
     }
     
     .logoNion {
         width: 37.6rem;
-        /* height: 36rem; */
         height: 14.1rem;
-        /* top: calc(100vh + 23rem + 800px + 44.5rem + 21rem); */
     }
 
     .logoHookah {
         width: 37.6rem;
         height: 14.1rem;
-        /* top: calc(100vh + 23rem + 800px + 44.5rem + 21rem); */
     }
     
     .bags {
         width: 100vw;
-        /* height: 112.5rem; */
         height: 31rem;
         position: absolute;
-        /* top: calc(100vh + 23rem + 800px + 44.5rem + 21rem + 14.1rem + 20rem); */
         left: 0;
         background-image: url(../../assets/union-hookah/bags/bags.png);
         background-size: cover;
@@ -427,7 +406,6 @@
         width: 64rem;
         height: 31rem;
         position: absolute;
-        /* top: calc(100vh + 23rem + 800px + 44.5rem + 21rem + 14.1rem + 20rem); */
         left: 50%;
         transform: translateX(-50%);
         background-image: url(../../assets/union-hookah/bags/top_bottom.png);
@@ -436,24 +414,19 @@
     }
     
     .centerMotionText {
-        /* width: 232rem; */
         width: 64rem;
         height: 31rem;
         position: absolute;
-        /* top: calc(100vh + 23rem + 800px + 44.5rem + 21rem + 14.1rem + 20rem); */
         left: 50%;
         transform: translateX(-50%);
         background-image: url(../../assets/union-hookah/bags/center.png);
         background-size: cover;
         background-position: center;
     }
-
-    /* dwffd */
     
     .blackSquareContainer {
         margin: 20rem 0;
         position: absolute;
-        /* top: calc(100vh + 23rem + 800px + 44.5rem + 21rem + 14.1rem + 20rem + 31rem); */
         left: 0;
         width: 100vw;
         height: 100vh;
@@ -479,7 +452,6 @@
     .whiteSquareContainer {
         margin: 40rem 0;
         position: absolute;
-        /* top: calc(100vh + 23rem + 800px + 44.5rem + 21rem + 14.1rem + 20rem + 31rem + 100vh + 1000px); */
     }
     
     .whiteSquare {
@@ -512,11 +484,9 @@
 
     .section2 {
         margin: 0;
-        /* height: 50vh; */
     }
 
     .section3 {
-        /* margin: 0; */
         height: 30vh;
     }
 

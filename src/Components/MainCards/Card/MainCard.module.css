@@ -1,4 +1,3 @@
-
 .card {
     display: flex;
     justify-content: center;
@@ -13,12 +12,7 @@
     cursor: pointer;
     will-change: width, opacity, top, left, border-radius;
     font-size: 1rem;
-    /* transition: all 1s ease; */
 }
-
-/* .card:hover {
-    width: 70rem;
-} */
 
 .hookahCatalogCard {
     background-image: url(../../../assets/union-hookah-catalog/title.jpg);
@@ -43,11 +37,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* width: 16.6rem;
-    height: 22rem; */
     width: 6.64em;
     height: 8.8em;
-    /* make it smaller */
     mask-image: url(../../../assets/union-hookah/logo-main.svg);
     -webkit-mask-image: url(../../../assets/union-hookah/logo-main.svg);
     mask-position: center;
@@ -68,13 +59,6 @@
     opacity: 0;
     z-index: 2;
 }
-
-/* .card > h2 > span {
-    font-family: 'Apple Garamond CYR';
-    text-transform: capitalize;
-    font-size: 1em;
-    line-height: 1;
-} */
 
 .titleSpan {
     white-space: pre;

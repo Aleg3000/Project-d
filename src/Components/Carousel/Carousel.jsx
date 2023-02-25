@@ -11,8 +11,6 @@ const Carousel = ({className, children, main}) => {
 
     const navigate = useNavigate()
 
-    // const colors = ['#C6C6C6', '#0D2805', '#E5291F', '#46442D']
-
     const [colors, setColors] = useState([])
 
     const cont = useRef();
@@ -64,24 +62,10 @@ const Carousel = ({className, children, main}) => {
             onComplete: () => {
                 navigate(page)
                 document.querySelector('meta[name="theme-color"]').setAttribute("content", '#0F1010');
-                // можно менять при скролле на странице
                 setTimeout(() => a.remove(), 0);
             },
         })
 }
-
-    // const getVelocity = (touches) => {
-    //     if (touches.length < 2) return
-    //     const startTime = touches.time
-    //     const endTime = touches.at(-1).time
-
-    //     const startPosX = touches[0].positionX
-    //     const finishPosX = touches.at(-1).positionX
-
-    //     const velocity = (finishPosX - startPosX) / (endTime - startTime)
-
-    //     return velocity
-    // }
 
     const getVelocity2 = (touches) => {
         // if (touches.length < 2) return 'click'
@@ -183,12 +167,9 @@ const Carousel = ({className, children, main}) => {
         gsap.registerPlugin()
         window.addEventListener('resize', () => setIsUpdated((state) => !state))
 
-        // document.body.style.overflow = 'hidden'
-
         getAnchors(cont.current)
 
         // setting container width depends on children quantity
-        // можно это оставить в лэйауте, а остальное в обычном, как варик
         cont.current.style.width = `${children.length * 100}vw`
 
         setColors(cardData.map(card => card.color))
@@ -197,7 +178,6 @@ const Carousel = ({className, children, main}) => {
 
     useEffect(() => {
         // setting new theme
-        // console.log(currentCard)
         document.querySelector('meta[name="theme-color"]').setAttribute("content", colors[currentCard]);
 
         if (main.current) main.current.style.backgroundColor = colors[currentCard]

@@ -197,11 +197,8 @@ const HookahPage = () => {
                 scrollTrigger: {
                     trigger: whiteSquareContainer.current,
                     start: 'center center',
-                    // toggleActions: 'play reverse play reverse',
-                    // scrub: 1,
                     end: "+=1000",
                     pin: true,
-                    // onEnter: () => console.log('enter'),
                     onEnterBack: () => {
                         nextProject.current.style.display = 'none'
                         console.log('enter back')
@@ -210,8 +207,6 @@ const HookahPage = () => {
                         console.log('leave')
                         nextProject.current.style.display = 'flex'
                     },
-                    // onLeaveBack: () => console.log('leave back'),
-                    // markers: true
                 }
             })
 
@@ -221,7 +216,6 @@ const HookahPage = () => {
                 scrollTrigger: {
                     trigger: whiteSquareContainer.current,
                     start: 'center center',
-                    // toggleActions: 'play reverse play reverse',
                     scrub: 1,
                     end: "+=400",
                 },
@@ -231,7 +225,6 @@ const HookahPage = () => {
                 scrollTrigger: {
                     trigger: whiteSquareContainer.current,
                     start: 'center center',
-                    // toggleActions: 'play reverse play reverse',
                     scrub: 1,
                     end: "+=800",
                 },
@@ -240,9 +233,6 @@ const HookahPage = () => {
                     "50%":  { top: '50vh', left: '50vw', width: 0, height: 0},
                     "100%": { top: 0, left: 0, width: '100vw', height: '100vh'},
                    },
-                // onStart: () => {
-                //     console.log('hi')
-                //     nextProject.current.style.display = 'flex'}
             })
 
         }, firstBg, firstFont, logoU, logoNion, logoHookah, topMotionText, centerMotionText)

@@ -10,7 +10,7 @@ const TransitionDiv = forwardRef( ({ color = '#0F1010' }, ref) => {
 
 const useCustomTransition = (ref) => {
     return () => {
-                return new Promise((resolve, reject) => {
+                return new Promise(resolve => {
                     document.body.style.overflowY = 'hidden'
                     ref.current.style.display = 'block'
 

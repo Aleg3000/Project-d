@@ -3,13 +3,11 @@
     width: 100vw;
     height: 100vh;
     background-color: #F2F2F2;
-    /* background-color: #0F1010; */
     padding: 8rem 8.7rem 8rem 3.6rem;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     color: #0F1010;
-    /* transition: all 1s linear; */
 }
 
 .title {
@@ -30,7 +28,6 @@
 .contactsContainer {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     font-family: 'Stolzl';
     font-style: normal;
     font-weight: 400;
@@ -90,16 +87,12 @@
 
 .skewDiv {
     position: absolute;
-    /* background-color: #0F1010; */
     background-color: pink;
     width: 150vw;
     height: 100vh;
     bottom: 0;
     left: 0;
     transform: translateY(-100%);
-    /* transform: skewY(0deg) translateX(-25%); */
-
-    /* transform: skewY(17deg) translate(-25%, -12%); */
 }
 
 @media (max-width: 767px) {

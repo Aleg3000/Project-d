@@ -43,7 +43,6 @@ const HookahCatalogPage = () => {
                     end: '4000',
                     pin: true,
                     scrub: true,
-                    // markers: true,
                     immediateRender: false
                 }
             })

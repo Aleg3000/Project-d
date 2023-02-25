@@ -2,9 +2,7 @@
     position: relative;
     width: 100vw;
     height: 100svh;
-    /* background-color: #30BA09; */
     background-color: #0F1010;
-    /* background-image: url(../../assets/audi/title.png); */
     background-position: center;
     background-size: cover;
     display: flex;
@@ -21,7 +19,6 @@
     font-weight: 400;
     font-size: 8rem;
     line-height: 8rem;
-    /* opacity: 0; */
     overflow: hidden;
 }
 

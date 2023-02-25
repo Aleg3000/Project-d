@@ -5,7 +5,6 @@ import cl from './MainCards.module.css'
 import cardCl from './Card/MainCard.module.css'
 import cardData from '../../data/cardsData';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 const MainCards = ({container}) => {
 
@@ -16,17 +15,14 @@ const MainCards = ({container}) => {
     function slideCard(mode, card, i, e, color) {
         if (isOpening) return
         const title = card.firstChild
-        const translate = 27.25; /* rem */
         
         if (mode === 'open') {
             gsap.to('main', {backgroundColor: color, duration: 1})
-            // to fix
             gsap.to(title, {opacity: 1, duration: 1, delay: 0.3 })
             gsap.to(card, {width: '70rem', opacity: 1, ease: "expo.out", duration: 1})
         } else {
             gsap.to(card, {width: '15.5rem', opacity: 1, ease: "expo.out", duration: 1})
             gsap.to('main', {backgroundColor: '#0F1010', duration: 1})
-            // to fix
             gsap.to(title, {opacity: 0, duration: 0.1, overwrite: true})
         }
     }

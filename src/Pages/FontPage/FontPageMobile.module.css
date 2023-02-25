@@ -102,12 +102,6 @@
 
 .thirdSection {
     margin: 4.5rem 0;
-    /* height: 80vw; */
-    /* width: 100vw; */
-    /* background-image: url(../../assets/font/background.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; */
     display: flex;
     flex-direction: column;
     gap: 14rem;

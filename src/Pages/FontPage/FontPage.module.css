@@ -50,7 +50,6 @@
     justify-content: center;
     align-items: center;
     gap: 1.3rem;
-    /* background-color: #494949; */
 }
 
 .letter {
@@ -122,7 +121,6 @@
     background-image: url(../../assets/font/mask.png);
     background-position: center;
     background-size: cover;
-    /* background-repeat: no-repeat; */
 }
 
 .footer {

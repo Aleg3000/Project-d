@@ -13,8 +13,6 @@
 
 .loading {
     width: 100vw;
-    /* короче тут подгоним к центру */
-    /* transform: translate(-50%, -50%); */
     font-family: 'Stolzl';
     font-style: normal;
     font-weight: 400;
@@ -25,18 +23,15 @@
 }
 
 .loading > div {
-    /* width: 50%; */
     display: inline-block;
 }
 
 .loading > div:first-child {
-    /* margin-left: auto; */
     width: 55%;
     text-align: right;
 }
 
 .loading > div:last-child {
-    /* тире епт мешает */
     width: 45%;
     text-align: left;
 }
@@ -48,6 +43,5 @@
 @media(max-width: 767px) {
     .loading {
         font-size: 3rem;
-        /* width: 25rem; */
     }
   }
