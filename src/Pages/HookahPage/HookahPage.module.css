@@ -228,14 +228,6 @@
     align-items: center;
 }
 
-.blackSquareLogo {
-    width: 80%;
-    height: 5.5%;
-    background-image: url(../../assets/union-hookah/site-animation/logo.png);
-    background-size: cover;
-    background-position: center;
-}
-
 .sitePage {
     z-index: 15;
     position: absolute;

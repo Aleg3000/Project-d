@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import cl from './Loader.module.css'
-import images from "../../data/images"
+import { imagesPreLoad, imagesAfterLoad } from "../../data/images"
 import { useRef } from "react"
 import gsap from "gsap"
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
@@ -20,12 +20,12 @@ const Loader = ({setIsLoading}) => {
     const loadImages = () => {
         let i = 0
 
-    images.forEach((file, index) => {
+    imagesPreLoad.forEach((file, index) => {
         const image = new Image()
         image.onload = () => {
             i++
-            setPercents(((i * 100) / images.length).toFixed(1) + '%')
-            if(i === images.length) {
+            setPercents(((i * 100) / imagesPreLoad.length).toFixed() + '%')
+            if(i === imagesPreLoad.length) {
                 setPercents('done')
                 gsap.fromTo(a.current,
                     {
@@ -46,6 +46,12 @@ const Loader = ({setIsLoading}) => {
         }
         image.src = file
     })
+
+    imagesAfterLoad.forEach(file => {
+        const image = new Image()
+        image.src = file
+    })
+
     }
 
     useEffect(() => {

@@ -85,12 +85,6 @@
     background-size: cover;
 }
 
-.letter:hover {
-    background-image: url(../../assets//font/test.png);
-}
-
-
-
 .secondSection {
     height: 90rem;
     margin: 0 0.6rem;
