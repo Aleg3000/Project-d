@@ -260,7 +260,7 @@
 .section5 {
     margin: 30rem 0;
     position: relative;
-    height: 330vh;
+    height: calc(300vh + 55rem);
 }
 
 .whiteSquareContainer {

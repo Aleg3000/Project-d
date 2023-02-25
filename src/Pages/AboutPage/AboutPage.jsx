@@ -66,7 +66,7 @@ const AboutPage = () => {
 
     useEffect(() => {
         // window.scrollTo(0,1)
-        isMobile ? document.body.style.overflowY = 'none'
+        isMobile ? document.body.style.overflowY = 'auto'
                  : document.body.style.overflowY = 'hidden'
         // console.log(window.scrollY)
         const ctx = gsap.context(() => {

@@ -19,7 +19,10 @@ const FontPage = () => {
 
     const [nextProject, toNextProject] = useTransitionNext('hookahCatalog')
 
-    useEffect(() => window.scrollTo(0, 0), [])
+    useEffect(() => {
+        document.body.style.overflowY = 'auto'
+        window.scrollTo(0, 0)
+    }, [])
     
     return (
         <div className={cl.container}>

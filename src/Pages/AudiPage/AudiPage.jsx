@@ -20,6 +20,7 @@ const AudiPage = () => {
     }
 
     useEffect(() => {
+        document.body.style.overflowY = 'auto'
         window.scrollTo(0, 0)
     }, [])
 

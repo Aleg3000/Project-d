@@ -10,9 +10,8 @@ import image9 from '../assets/union-hookah-catalog/page4.jpg'
 import image10 from '../assets/union-hookah-catalog/title.jpg'
 import image11 from '../assets/audi/title.png'
 import image12 from '../assets/font/title.png'
-import image13 from '../assets/3d.png'
 
 const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10,
-image11, image12, image13]
+image11, image12]
 
 export default images

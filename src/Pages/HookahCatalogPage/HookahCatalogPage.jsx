@@ -29,6 +29,8 @@ const HookahCatalogPage = () => {
 
         window.scrollTo(0, 0)
 
+        document.body.style.overflowY = 'auto'
+
         gsap.registerPlugin(ScrollTrigger)
 
         const ctx = gsap.context(() => {

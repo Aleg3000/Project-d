@@ -141,9 +141,8 @@
 .footer {
     width: 100vw;
     height: 100vh;
-    background-image: url(../../assets/union-hookah-catalog/final.jpg);
-    background-position: center;
-    background-size: cover;
+    background: url(../../assets/union-hookah-catalog/final.png) no-repeat, linear-gradient(139.89deg, #3B3B3B 7.8%, #292929 94.04%);
+    background-position: bottom;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,7 +219,9 @@
     }
 
     .footer {
-        background-image: url(../../assets/union-hookah-catalog/final-mobile.jpg);
+        background: url(../../assets/union-hookah-catalog/final-mobile.png) no-repeat, linear-gradient(139.89deg, #3B3B3B 7.8%, #292929 94.04%);
+        background-size: contain;
+        background-position: bottom;
     }
     
     .footer > h2 {

@@ -1,15 +1,10 @@
 .main {
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
-    /* width: 100vw; */
     height: 100svh;
     background-color: #0F1010;
     overflow: hidden;
 }
-
-/* чет сделать с тем что на яфоне не убирается снизу строка */
-
-/* // сделать на гридах, add minmax */
 
 .title {
     opacity: 0;
@@ -35,8 +30,6 @@
 }
 
 .cardVisibleContainer {
-    /* position: absolute;
-    top: 20vh; */
     opacity: 0;
     overflow: hidden;
 }
@@ -44,24 +37,20 @@
 .cardContainer {
     height: 100%;
     width: 800vw;
-    /* transform: translateX(calc(-100vw + 45px)); */
     display: flex;
     padding: 0 30px;
     gap: 15px;
 }
 
 .card {
-    /* margin: 0 1.5rem; */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: calc(100vw - 60px);
     border-radius: 10px;
-    /* background-image: url(../../assets/union-hookah-catalog/title.png); */
     background-size: cover;
     background-position: center;
-    /* object-fit: cover; */
 }
 
 .card > h2 {
@@ -108,7 +97,6 @@
     transform: translate(-50%, -50%);
     width: 6.4rem;
     height: 8rem;
-    /* make it smaller */
     mask-image: url(../../assets/union-hookah/logo-main.svg);
     -webkit-mask-image: url(../../assets/union-hookah/logo-main.svg);
     mask-position: center;
@@ -118,9 +106,6 @@
     background-color: #000;
 }
 
-.threeDCard {
-    background-image: url(../../assets/3d.png);
-}
 .audiCard {
     background-image: url(../../assets/audi/title.png);
 }
@@ -130,7 +115,6 @@
 
 .transitionDiv {
     display: none;
-    /* width: 100vw; */
     height: 100svh;
     background-color: #F2F2F2;
 }

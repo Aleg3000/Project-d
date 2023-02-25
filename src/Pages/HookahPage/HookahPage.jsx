@@ -14,6 +14,8 @@ const HookahPage = () => {
 
     const navigate = useNavigate()
 
+    const themeTrigger = useRef()
+
     const firstBg = useRef()
     const firstFont = useRef()
     const leftDudka = useRef()
@@ -55,34 +57,44 @@ const HookahPage = () => {
 
         window.scrollTo(0, 0)
 
+        document.body.style.overflowY = 'auto'
+
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
+
+            // if (isMobile) {
+            //     document.querySelector('meta[name="theme-color"]').setAttribute("content", '#30BA09')
+            //     ScrollTrigger.create({
+            //         trigger: themeTrigger.current,
+            //         start: 'top top',
+            //         onEnter: () => document.querySelector('meta[name="theme-color"]').setAttribute("content", '#0F1010'),
+            //         onLeaveBack: () => document.querySelector('meta[name="theme-color"]').setAttribute("content", '#30BA09'),
+            //         markers: true
+            //     })
+            // }
+
             ScrollTrigger.create({
                 trigger: firstBg.current,
                 pin: true,
                 start: "top 200px",
                 end: "+=800",
-                // markers: true
             });
 
             gsap.from(firstFont.current, {
                 x: '100vw',
-                // opacity: 0,
                 scrollTrigger: {
                     trigger: firstFont.current,
                     scrub: 1,
                     start: "top 200px",
                     end: "+=800",
                     pin: true,
-                    // markers: true,
                     immediateRender: false /*  i should read about it, its prevents jumps using fast scroll */
                 }
             })
 
             gsap.from(overflowFont.current, {
                 x: '100vw',
-                // opacity: 0,
                 scrollTrigger: {
                     trigger: overflowFont.current,
                     scrub: 1,
@@ -97,27 +109,18 @@ const HookahPage = () => {
                 x: function(index, target, targets) { 
                     return target.clientWidth * 0.42; 
                 },
-                // xPercent: 50,
                 duration: 0.6,
-                // repeat: -1,
-                // repeatDelay: 3,
                 scrollTrigger: {
                     trigger: logoU.current,
                     start: 'center 75%',
-                    // markers: true,
-                    // toggleActions: 'play reset play reset'
                 }
             })
             gsap.from(logoNion.current, {
                 x: '100vw',
                 duration: 0.7,
-                // ease: "back.out(1.2)",
-                // repeat: -1,
-                // repeatDelay: 3,
                 scrollTrigger: {
                     trigger: logoU.current,
                     start: 'center 75%',
-                    // toggleActions: 'play reset play reset'
                 }
             })
             gsap.from(logoHookah.current, {
@@ -125,12 +128,9 @@ const HookahPage = () => {
                 delay: 1,
                 duration: 0.7,
                 ease: "back.out(1.7)",
-                // repeat: -1,
-                // repeatDelay: 3,
                 scrollTrigger: {
                     trigger: logoU.current,
                     start: 'center 75%',
-                    // toggleActions: 'play reset play reset'
                 }
             })
 
@@ -144,7 +144,6 @@ const HookahPage = () => {
                     trigger: topMotionText.current,
                     start: '25% center',
                     toggleActions: 'play reverse play reverse',
-                    // markers: true
                 }
             })
 
@@ -164,11 +163,8 @@ const HookahPage = () => {
                 scrollTrigger: {
                     trigger: blackSquareContainer.current,
                     start: 'center center',
-                    // toggleActions: 'play reverse play reverse',
-                    // scrub: 1,
                     end: "+=1000",
                     pin: true,
-                    // markers: true
                 }
             })
 
@@ -178,7 +174,6 @@ const HookahPage = () => {
                 scrollTrigger: {
                     trigger: blackSquareContainer.current,
                     start: 'center center',
-                    // toggleActions: 'play reverse play reverse',
                     scrub: 1,
                     end: "+=400",
                 },
@@ -188,7 +183,6 @@ const HookahPage = () => {
                 scrollTrigger: {
                     trigger: blackSquareContainer.current,
                     start: 'center center',
-                    // toggleActions: 'play reverse play reverse',
                     scrub: 1,
                     end: "+=800",
                 },
@@ -263,7 +257,7 @@ const HookahPage = () => {
         <><div className={cl.content}>
             <Welcome toMain={toMain} />
 
-            <section className={cl.section1}>
+            <section ref={themeTrigger} className={cl.section1}>
                 <div ref={firstBg} className={cl.unionFirstBg}></div>
                 <div ref={firstFont} className={cl.unionFirstFont}></div>
                 <div ref={overflowFont} className={cl.unionFirstTopFont}></div>
