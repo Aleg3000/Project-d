@@ -25,7 +25,7 @@ const MainPage = () => {
 
         tl.to(cardsContainer.current, {opacity: 1, duration: 1, delay: 0.5})
         tl.to(title.current, {opacity: 1})
-        tl.to(about.current, {opacity: 1})
+        tl.to(about.current, {opacity: 1, onStart: () => about.current.style.display = 'block'})
 
         return () => document.body.style.overflowY = 'auto'
     })

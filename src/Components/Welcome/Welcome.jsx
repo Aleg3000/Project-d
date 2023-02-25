@@ -48,7 +48,7 @@ const Welcome = ({toMain}) => {
     }, [])
 
     return (
-        <header style={{backgroundImage}} className={cl.welcomeSection}>
+        <header style={{backgroundImage, backgroundColor: pathname === '/hookahBrand' ? '#30BA09' : '#0F1010'}} className={cl.welcomeSection}>
                 <div onClick={toMain} className='titleBtn'><p>Project-d</p></div>
                 <h2>
                     {createSubtitle(card.title, cl.firstSpan)}

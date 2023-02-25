@@ -1,5 +1,6 @@
 .container {
     overflow-x: hidden;
+    background-color: #0F1010;
 }
 
 .welcomeSection {
@@ -79,9 +80,12 @@
 
 .pageView {
     width: 100vw;
-    height: 100vh;
+    height: calc(100% - 10rem);
+    box-sizing: border-box;
+    margin: 5rem 0;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .pageView:nth-child(1) {

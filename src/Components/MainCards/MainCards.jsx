@@ -41,7 +41,7 @@ const MainCards = ({container}) => {
             document.body.appendChild(a)
             const { dataset: { page } } = e.currentTarget
 
-            gsap.to([`.${cardCl.firstSpan}`, `.${cardCl.secondSpan}`], {
+            gsap.to(`.${cardCl.titleSpan}`, {
                 yPercent: 100,
                 rotation: -3,
                 duration: 0.5,

@@ -36,7 +36,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background-color: #0F1010;
   overflow-x: hidden;
 }
 
@@ -58,7 +58,7 @@ a {
 .transitionDiv {
   display: none;
   z-index: 99;
-  position: absolute;
+  position: fixed;
   width: 150vw;
   height: 100vh;
   bottom: 0;
@@ -114,4 +114,11 @@ a {
 .nextProjectBtn:hover > p {
   animation-name: bounce;
   animation-timing-function: ease;
+}
+
+@media(max-width: 767px) {
+  .nextProjectBtn {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
 }

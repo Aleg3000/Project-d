@@ -34,7 +34,7 @@ const AudiPage = () => {
                 <div className={cl.audi3}></div>
             </main>
             <footer className={cl.footer}>
-            <h2 className='nextProjectBtn' onClick={toNextProject}><p>NEXT PROJECT</p></h2>
+            <h2 className='nextProjectBtn' onClick={isMobile ? () => navigate('/font') : toNextProject}><p>NEXT PROJECT</p></h2>
             </footer>
             {nextProject}
             <TransitionDiv color={isMobile ? '#E5291F' : '#0F1010'} ref={transitionDiv} />

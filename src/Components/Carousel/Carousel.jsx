@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import cardData from '../../data/cardsData';
+import cardCl from '../../Pages/MainPage/MainPageMobile.module.css'
 
 let currentCard = 0
 
@@ -42,25 +43,29 @@ const Carousel = ({className, children, main}) => {
             duration: 1
         })
 
+        gsap.to(`.${cardCl.titleSpan}`, {
+            yPercent: 100,
+            rotation: -3,
+            duration: 0.5,
+            stagger: 0.05,
+            opacity: 0,
+            ease: "power3.out",
+        })
+
         const { dataset: { page } } = e.target
 
         gsap.to(a, { 
-            delay: 0.5,
-            duration: 2,
+            width: '100vw',
+            height: '100svh',
+            top: 0,
+            left: 0,
+            delay: 1.5,
+            duration: 0.3,
             onComplete: () => {
-                console.log(page)
                 navigate(page)
                 document.querySelector('meta[name="theme-color"]').setAttribute("content", '#0F1010');
                 // можно менять при скролле на странице
                 setTimeout(() => a.remove(), 0);
-            },
-            keyframes: {
-                '0%': {width: a.style.width, height: a.style.height, top: a.style.top, left: a.style.left, borderRadius: '10px'},
-                '50%': {width: '100vw', height: a.style.height, top: a.style.top, left: 0, borderRadius: '10px'},
-                '100%': {width: '100vw', height: '100vh', top: '0', left: '0', borderRadius: '0',},
-                ease: 'power1.out',
-                easeEach: 'none',
-                // hmmmmmm why font behave so weird
             },
         })
 }
@@ -102,8 +107,7 @@ const Carousel = ({className, children, main}) => {
         const diff = (startPos - currentPos).toFixed(2)
         let lastTouch = -lastPos - diff
         if (lastTouch > 0 || lastTouch < -anchors.at(-1)) {
-            lastTouch = -lastPos - diff * 0.4  
-            // сделать 0.3 наверн или 0.5 ваще
+            lastTouch = -lastPos - diff * 0.4
         }
         cont.current.style.transform = `translateX(${lastTouch}px)`
 
@@ -117,8 +121,6 @@ const Carousel = ({className, children, main}) => {
         setTouches([])
 
         if (velocity === undefined) {
-            // здесь можно открывать проект
-
             openCard(e)
             return
         }

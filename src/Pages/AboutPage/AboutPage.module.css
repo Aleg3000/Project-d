@@ -1,6 +1,7 @@
 .aboutContainer {
+    position: relative;
     width: 100vw;
-    height: calc(100vh + 1px);
+    height: 100vh;
     background-color: #F2F2F2;
     /* background-color: #0F1010; */
     padding: 8rem 8.7rem 8rem 3.6rem;
@@ -103,13 +104,14 @@
 
 @media (max-width: 767px) {
     .aboutContainer{
+        height: 115rem;
         flex-direction: column;
-        gap: 4rem;
+        gap: 5rem;
         justify-content: flex-start;
     }
 
     .title {
-        width: 50%;
+        width: 60%;
     }
 
     .contactInfoContainer{
@@ -119,12 +121,14 @@
     }
 
     .aboutInfoContainer {
+        justify-content: unset;
+        gap: 3rem;
         font-size: 1.6rem;
-        line-height: 2.6rem;
+        line-height: 3.2rem;
     }
 
     .projectsBtn {
-        bottom: 10vh;
+        bottom: 6rem;
         transform: translate(-50%, -50%);
     }
 }

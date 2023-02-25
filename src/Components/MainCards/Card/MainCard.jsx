@@ -12,8 +12,8 @@ const MainСard = ({cardInfo: {dataset, title, category, className, color}, inde
             data-page={dataset}
         >
             <h2>
-                    {createSubtitle(title, cl.firstSpan)}
-                    {createSubtitle(category, cl.secondSpan)}
+                    {createSubtitle(title, cl.titleSpan)}
+                    {createSubtitle(category, cl.titleSpan)}
             </h2>
         </div>
     )

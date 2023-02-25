@@ -103,9 +103,9 @@ const HookahPage = () => {
                 // repeatDelay: 3,
                 scrollTrigger: {
                     trigger: logoU.current,
-                    start: '25% center',
+                    start: 'center 75%',
                     // markers: true,
-                    toggleActions: 'play reset play reset'
+                    // toggleActions: 'play reset play reset'
                 }
             })
             gsap.from(logoNion.current, {
@@ -116,8 +116,8 @@ const HookahPage = () => {
                 // repeatDelay: 3,
                 scrollTrigger: {
                     trigger: logoU.current,
-                    start: '25% center',
-                    toggleActions: 'play reset play reset'
+                    start: 'center 75%',
+                    // toggleActions: 'play reset play reset'
                 }
             })
             gsap.from(logoHookah.current, {
@@ -129,8 +129,8 @@ const HookahPage = () => {
                 // repeatDelay: 3,
                 scrollTrigger: {
                     trigger: logoU.current,
-                    start: '25% center',
-                    toggleActions: 'play reset play reset'
+                    start: 'center 75%',
+                    // toggleActions: 'play reset play reset'
                 }
             })
 
@@ -252,25 +252,8 @@ const HookahPage = () => {
             })
 
         }, firstBg, firstFont, logoU, logoNion, logoHookah, topMotionText, centerMotionText)
-        
 
-
-
-
-
-        // gsap.to("[data-speed]", {
-        //     y: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window) ,
-        //     ease: "none",
-        //     scrollTrigger: {
-        //       start: 200,
-        //       end: "max",
-        //       invalidateOnRefresh: true,
-        //       scrub: 0,
-        //       markers: true,
-        //     },
-        //   });
-
-        return () => {ctx.revert()} /* clean up */
+        return () => {ctx.revert()}
     }
     ,[firstBg, firstFont, overflowFont, logoU, logoNion, logoHookah, topMotionText, centerMotionText, blackSquareContainer, blackSquare, sitePage, whiteSquareContainer, whiteSquare, mockUpContainer, nextProject])
 
@@ -322,7 +305,7 @@ const HookahPage = () => {
             
 
             <div ref={nextProject} className={cl.nextProject}>
-                <h2 className='nextProjectBtn' onClick={toNextProject}><p>NEXT PROJECT</p></h2>
+                <h2 className='nextProjectBtn' onClick={isMobile ? () => navigate('/audi') : toNextProject}><p>NEXT PROJECT</p></h2>
             </div>
         {nextProjectEl}
         </div><TransitionDiv color={isMobile ? '#0D2805' : '#0F1010'} ref={transitionDiv} /></>

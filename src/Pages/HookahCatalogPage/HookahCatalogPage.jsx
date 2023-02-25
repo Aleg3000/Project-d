@@ -25,7 +25,6 @@ const HookahCatalogPage = () => {
         transition().finally(() => navigate('/'))
     }
 
-
     useLayoutEffect(() => {
 
         window.scrollTo(0, 0)
@@ -76,7 +75,7 @@ const HookahCatalogPage = () => {
              </section>
 
             <footer className={cl.footer}>
-                <h2 className='nextProjectBtn' onClick={toNextProject}><p>NEXT PROJECT</p></h2>
+                <h2 className='nextProjectBtn' onClick={isMobile ? () => navigate('/hookahBrand') : toNextProject}><p>NEXT PROJECT</p></h2>
             </footer>
             {nextProject}
             <TransitionDiv color={isMobile ? '#C6C6C6' : '#0F1010'} ref={transitionDiv} />

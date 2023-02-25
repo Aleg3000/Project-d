@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import cardData from '../../data/cardsData';
 import { TransitionDiv, useCustomTransition } from "../../hooks/useCustomTransition"
+import { createSubtitle } from '../../functions/functions';
 
 const MainPageMobile = () => {
     const main = useRef()
@@ -47,7 +48,10 @@ const MainPageMobile = () => {
                 <div ref={cardsContainer} className={cl.cardVisibleContainer}>
                     <Carousel main={main} className={cl.cardContainer}>
                         {cardData.map((card, i) => <div key={i} data-page={card.dataset} className={[cl.card, cl[card.className]].join(' ')}>
-                            <h2>{card.title}<span> {card.category}</span></h2>
+                            <h2>
+                                {createSubtitle(card.title, cl.titleSpan)}
+                                {createSubtitle(card.category, cl.titleSpan)}
+                            </h2>
                         </div>)}
                     </Carousel>
                 </div>

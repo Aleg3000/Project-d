@@ -17,7 +17,7 @@ const FontPageMobile = () => {
         transition().finally(() => navigate('/'))
     }
 
-    const [nextProject, toNextProject] = useTransitionNext('hookahCatalog')
+    // const [nextProject, toNextProject] = useTransitionNext('hookahCatalog')
 
     useEffect(() => window.scrollTo(0, 0), [])
 
@@ -49,9 +49,9 @@ const FontPageMobile = () => {
             </main>
 
             <footer className={cl.footer}>
-                <h2 onClick={toNextProject}>NEXT PROJECT</h2>
+                <h2 onClick={() => navigate('/hookahCatalog')}>NEXT PROJECT</h2>
             </footer>
-            {nextProject}
+            {/* {nextProject} */}
         </div><TransitionDiv color='#46442D' ref={transitionDiv} /></>
     )
 }
