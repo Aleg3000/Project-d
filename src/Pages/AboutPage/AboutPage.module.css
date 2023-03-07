@@ -36,6 +36,10 @@
     color: #525252;
 }
 
+.contactsContainer > a {
+    cursor: pointer;
+}
+
 .aboutInfoContainer {
     display: flex;
     flex-direction: column;

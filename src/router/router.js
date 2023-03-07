@@ -8,7 +8,7 @@ import HookahCatalogPage from '../Pages/HookahCatalogPage/HookahCatalogPage';
 import FontPageMobile from '../Pages/FontPage/FontPageMobile';
 import AboutPage from '../Pages/AboutPage/AboutPage';
 
-const basename = '/Project-d'
+// const basename = '/'
 
 const desktopRouter = createBrowserRouter([
     {
@@ -40,7 +40,8 @@ const desktopRouter = createBrowserRouter([
       element: <AboutPage />
     },
   ],
-  { basename });
+  // { basename }
+  );
 
   const mobileRouter = createBrowserRouter([
     {
@@ -72,6 +73,7 @@ const desktopRouter = createBrowserRouter([
       element: <AboutPage />
     },
   ],
-  { basename });
+  // { basename }
+  );
 
   export { mobileRouter, desktopRouter }

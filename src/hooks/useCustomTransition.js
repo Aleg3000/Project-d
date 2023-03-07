@@ -25,7 +25,7 @@ const useCustomTransition = (ref) => {
                             easeEach: 'none',
                             ease: 'power1.out',
                         },
-                        onComplete: () => resolve()
+                        onComplete: () =>  resolve()
                     })
                 })
                 

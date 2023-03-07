@@ -38,8 +38,6 @@ const Loader = ({setIsLoading}) => {
                         duration: 0.5,
                         onComplete: () => {
                             setTimeout(() => transition().finally(() => setIsLoading(false)), 1500)
-                            
-                            
                         }
                     })
             }
@@ -55,6 +53,7 @@ const Loader = ({setIsLoading}) => {
     }
 
     useEffect(() => {
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", '#ffffff')
         gsap.registerPlugin()
         loadImages()
     }, [])

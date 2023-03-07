@@ -67,6 +67,7 @@ const AboutPage = () => {
     useEffect(() => {
         isMobile ? document.body.style.overflowY = 'auto'
                  : document.body.style.overflowY = 'hidden'
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", 'F2F2F2')
         const ctx = gsap.context(() => {
             const tl = gsap.timeline()
             tl.from(title.current, {
@@ -99,8 +100,8 @@ const AboutPage = () => {
                 <div className={cl.contactInfoContainer}>
                     <h2 onClick={toMain} ref={title} className={cl.title}>Project—d</h2>
                     <div ref={fifth} style={{ opacity: 0 }} className={cl.contactsContainer}>
-                        <div>+7 999 122 22 74</div>
-                        <div>info@project-d.com</div>
+                        <a href="tel:+79092888678">+7 909 288 86 78</a>
+                        <a href="mailto:project-d@inbox.ru">project-d@inbox.ru</a>
                     </div>
                 </div>
                 <div className={cl.aboutInfoContainer}>
