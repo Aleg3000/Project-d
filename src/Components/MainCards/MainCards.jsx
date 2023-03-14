@@ -21,7 +21,7 @@ const MainCards = ({container}) => {
             gsap.to(title, {opacity: 1, duration: 1, delay: 0.3 })
             gsap.to(card, {width: '70rem', opacity: 1, ease: "expo.out", duration: 1})
         } else {
-            gsap.to(card, {width: '15.5rem', opacity: 1, ease: "power1.out", duration: 1})
+            gsap.to(card, {width: '15.5rem', opacity: 1, ease: "power1.out", duration: 1.5})
             gsap.to('main', {backgroundColor: '#0F1010', duration: 1})
             gsap.to(title, {opacity: 0, duration: 0.1, overwrite: true})
         }

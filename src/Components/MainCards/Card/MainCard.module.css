@@ -65,7 +65,7 @@
     display: inline-block;
 }
 
-.titleSpan:first-child {
+.firstSpan {
     opacity: 1;
     white-space: pre;
     display: inline-block;
@@ -77,7 +77,9 @@
     line-height: 4.8rem;
 }
 
-.titleSpan:last-child {
+.lastSpan {
+    white-space: pre;
+    display: inline-block;
     opacity: 1;
     white-space: pre;
     position: relative;

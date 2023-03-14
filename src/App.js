@@ -15,6 +15,7 @@ function App() {
   const [isNormal, setIsNormal] = useState(true)
 
   const checkOrientation = () => {
+    // setIsNormal(window.orientation === 90 || window.orientation === -90)
     if (window.orientation === 90 || window.orientation === -90) {
       setIsNormal(false)
     } else {

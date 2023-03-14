@@ -101,7 +101,7 @@
 
 @media (max-width: 767px) {
     .aboutContainer{
-        height: 115rem;
+        height: auto;
         flex-direction: column;
         gap: 5rem;
         justify-content: flex-start;
@@ -118,10 +118,12 @@
     }
 
     .aboutInfoContainer {
+        height: auto;
         justify-content: unset;
         gap: 3rem;
         font-size: 1.6rem;
         line-height: 3.2rem;
+        margin-bottom: 7rem;
     }
 
     .projectsBtn {

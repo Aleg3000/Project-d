@@ -2,7 +2,6 @@ import cl from './MainCard.module.css'
 import { createSubtitle } from '../../../functions/functions';
 
 const MainСard = ({cardInfo: {dataset, title, category, className, color}, index, slide: slideCard, open}) => {
-
     return (
         <div 
             onMouseEnter={(e) => slideCard.call(null, 'open', e.currentTarget, index, e, color)} 
@@ -12,8 +11,8 @@ const MainСard = ({cardInfo: {dataset, title, category, className, color}, inde
             data-page={dataset}
         >
             <h2>
-                    {createSubtitle(title, cl.titleSpan)}
-                    {createSubtitle(category, cl.titleSpan)}
+                    {createSubtitle(title, cl.firstSpan, cl.titleSpan)}
+                    {createSubtitle(category, cl.lastSpan, cl.titleSpan)}
             </h2>
         </div>
     )
