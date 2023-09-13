@@ -12,21 +12,6 @@ const MainCards = ({container}) => {
 
     const navigate = useNavigate()
 
-    function slideCard(mode, card, i, e, color) {
-        if (isOpening) return
-        const title = card.firstChild
-        
-        if (mode === 'open') {
-            gsap.to('main', {backgroundColor: color, duration: 1})
-            gsap.to(title, {opacity: 1, duration: 1, delay: 0.3 })
-            gsap.to(card, {width: '70rem', opacity: 1, ease: "expo.out", duration: 1})
-        } else {
-            gsap.to(card, {width: '15.5rem', opacity: 1, ease: "power1.out", duration: 1.5})
-            gsap.to('main', {backgroundColor: '#0F1010', duration: 1})
-            gsap.to(title, {opacity: 0, duration: 0.1, overwrite: true})
-        }
-    }
-
     function openCard(e) {
             setIsOpening(true)
             const a = e.currentTarget.cloneNode(true)
@@ -56,14 +41,70 @@ const MainCards = ({container}) => {
                 a.remove()
             }
         })
-            
     }
 
+    const [currentCard, setCurrentCard] = useState(null)
+
+    const onMouseEnter = (e) => {
+        const newCard = e.target
+        const newCardIndex = Number(newCard.dataset.index)
+        if (isNaN(newCardIndex) || isOpening) return
+        const color = newCard.dataset.color
+        const title = newCard.firstChild
+        gsap.to('main', {backgroundColor: color, duration: 1})
+        gsap.to(title, {opacity: 1, duration: 1, delay: 0.3 })
+        gsap.to(newCard, {width: '70rem', opacity: 1, ease: "expo.out", duration: 1})
+        setCurrentCard(newCardIndex)
+    }
+
+    const onMouseLeave = (e) => {
+        const prevCard = e.currentTarget.querySelectorAll('div')[currentCard]
+        gsap.to(prevCard, {width: '15.5rem', opacity: 1, ease: "power1.out", duration: 1.5})
+        gsap.to('main', {backgroundColor: '#0F1010', duration: 1})
+        gsap.to(prevCard.firstChild, {opacity: 0, duration: 0.1, overwrite: true})
+        setCurrentCard(null)
+    }
+
+    const onMouseMove = (e) => {
+        const newCard = e.target
+        const newCardIndex = Number(newCard.dataset.index)
+        if (isNaN(newCardIndex) || isOpening) return
+        if (currentCard !== newCardIndex) {
+            const color = newCard.dataset.color
+            const title = newCard.firstChild
+            gsap.to('main', {backgroundColor: color, duration: 1})
+            gsap.to(title, {opacity: 1, duration: 1, delay: 0.3 })
+            gsap.to(newCard, {width: '70rem', opacity: 1, ease: "expo.out", duration: 1})
+
+
+            if (currentCard !== null) {
+                const prevCard = e.currentTarget.querySelectorAll('div')[currentCard]
+                gsap.to(prevCard, {width: '15.5rem', opacity: 1, ease: "power1.out", duration: 1.5})
+                gsap.to(prevCard.firstChild, {opacity: 0, duration: 0.1, overwrite: true})
+            }
+
+            setCurrentCard(newCardIndex)
+
+        }
+    }
+
+
+
     return (
-        <div className={cl.mainContainer} ref={container}>
+        <div 
+            onMouseEnter={onMouseEnter} 
+            onMouseMove={onMouseMove}
+            onMouseLeave={onMouseLeave}
+            className={cl.mainContainer} 
+            ref={container}
+        >
             {cardData
-                .map((card, i) => <Card open={openCard} slide={slideCard} cardInfo={card} index={i} key={i} 
-                                    />)}
+                .map((card, i) => <Card 
+                                    open={openCard} 
+                                    cardInfo={card} 
+                                    index={i} 
+                                    key={i} 
+                                  />)}
         </div>
     )
 }
